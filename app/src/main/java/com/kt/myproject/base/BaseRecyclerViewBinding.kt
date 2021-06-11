@@ -15,14 +15,14 @@ import androidx.viewbinding.ViewBinding
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-abstract class BaseRecyclerAdapter<T, VB : ViewBinding> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+abstract class BaseRecyclerAdapterBinding<T, VB : ViewBinding> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var binding: VB
 
     inner class ViewHolder(view: ViewBinding) : RecyclerView.ViewHolder(view.root)
 
     /**
-     * [BaseRecyclerAdapter] abstract function for initialize recycler view type.
+     * [BaseRecyclerAdapterBinding] abstract function for initialize recycler view type.
      */
     protected abstract fun getBinding(context: Context, parent: ViewGroup): VB
 

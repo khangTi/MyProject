@@ -4,8 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.kt.myproject.base.BaseRecyclerAdapter
+import com.kt.myproject.base.BaseRecyclerAdapterBinding
 import com.kt.myproject.databinding.ItemHomeBinding
+import com.kt.myproject.repository.UI
 
 /**
  * -------------------------------------------------------------------------------------------------
@@ -14,13 +15,13 @@ import com.kt.myproject.databinding.ItemHomeBinding
  * @Description: ...
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
- */class HomeAdapter : BaseRecyclerAdapter<String, ItemHomeBinding>() {
+ */class HomeAdapter : BaseRecyclerAdapterBinding<UI, ItemHomeBinding>() {
 
     override fun getBinding(context: Context, parent: ViewGroup): ItemHomeBinding {
         return ItemHomeBinding.inflate(LayoutInflater.from(context), parent, false)
     }
 
-    override fun View.onBindModel(model: String, position: Int, view: ItemHomeBinding) {
-        view.itemHomeLabel.text = model
+    override fun View.onBindModel(model: UI, position: Int, view: ItemHomeBinding) {
+        view.itemHomeLabel.text = model.toString()
     }
 }

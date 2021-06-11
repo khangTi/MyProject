@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 
@@ -31,7 +33,7 @@ abstract class BaseFragment<VB : ViewBinding>: Fragment(), BaseView {
     /**
      * [BaseFragment] required implements
      */
-    abstract fun getBinding(inflater : LayoutInflater, viewGroup : ViewGroup?) : VB
+    abstract fun getBinding(inflater: LayoutInflater, vg: ViewGroup?): VB
 
     abstract fun onViewCreated()
 
@@ -58,7 +60,12 @@ abstract class BaseFragment<VB : ViewBinding>: Fragment(), BaseView {
             this.startActivity(intent)
             this.finish()
         }
+    }
 
+    fun <T> MutableLiveData<T>.obsever(block: (T) -> Unit) {
+        this.observe(viewLifecycleOwner, {
+            block(it)
+        })
     }
 
 }
