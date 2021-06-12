@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.base.NavigationId
 import com.kt.myproject.databinding.HomeBinding
-import com.kt.myproject.repository.UI
-import com.kt.myproject.repository.list
+import com.kt.myproject.repository.data.UI
+import com.kt.myproject.repository.data.list
 import com.kt.myproject.ui.adapter.HomeAdapter
 
 class HomeFragment : BaseFragment<HomeBinding>() {

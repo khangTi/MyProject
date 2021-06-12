@@ -1,4 +1,4 @@
-package com.kt.myproject.repository
+package com.kt.myproject.repository.data
 
 /**
  * -------------------------------------------------------------------------------------------------

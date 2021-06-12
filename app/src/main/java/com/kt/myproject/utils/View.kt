@@ -1,5 +1,6 @@
 package com.kt.myproject.utils
 
+import android.os.Looper
 import android.view.View
 
 /**
@@ -12,7 +13,7 @@ import android.view.View
  */
 
 fun View.show() {
-    if (getMainLooper) {
+    if (Looper.getMainLooper() == Looper.myLooper()) {
         this.visibility = View.VISIBLE
     } else {
         post {
@@ -22,7 +23,7 @@ fun View.show() {
 }
 
 fun View.hide() {
-    if (getMainLooper) {
+    if (Looper.getMainLooper() == Looper.myLooper()) {
         this.visibility = View.INVISIBLE
     } else {
         post {
@@ -32,7 +33,7 @@ fun View.hide() {
 }
 
 fun View.gone() {
-    if (getMainLooper) {
+    if (Looper.getMainLooper() == Looper.myLooper()) {
         this.visibility = View.GONE
     } else {
         post {

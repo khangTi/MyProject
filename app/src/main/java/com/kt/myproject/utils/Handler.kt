@@ -27,7 +27,7 @@ fun post(duration: Long, block: () -> Unit) {
 val getMainLooper = Looper.getMainLooper() == Looper.myLooper()
 
 fun toast(mess: String) {
-    if (getMainLooper) {
+    if (Looper.getMainLooper() == Looper.myLooper()) {
         Toast.makeText(app, mess, Toast.LENGTH_SHORT).show()
     } else {
         post { Toast.makeText(app, mess, Toast.LENGTH_SHORT).show() }

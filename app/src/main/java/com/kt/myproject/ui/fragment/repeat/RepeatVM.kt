@@ -25,14 +25,14 @@ class RepeatVM : ViewModel() {
     suspend fun repeatLog(): Job {
         return CoroutineScope(Dispatchers.IO).launch {
             delay(2000)
-            val random = Random().nextInt(listRandonRepeat.size)
-            list.add(listRandonRepeat[random])
+            val random = Random().nextInt(listRandomRepeat.size)
+            list.add(listRandomRepeat[random])
             listLiveData.postValue(list)
             repeatLog()
         }
     }
 
-    private val listRandonRepeat = listOf(
+    private val listRandomRepeat = listOf(
         RepeatData("Songoku", "https://i.pinimg.com/originals/d9/97/24/d99724907cd57cfcaf6a1833a8bd5b12.jpg", "11/06/2021"),
         RepeatData("Luffy", "https://yt3.ggpht.com/ytc/AAUvwnjyHPfxxlEjIsje7BF_6-Ns844XBXm7tTou9bdQ=s900-c-k-c0x00ffffff-no-rj", "11/06/2021"),
         RepeatData("Zoro", "https://gamek.mediacdn.vn/133514250583805952/2020/9/11/acz1-1599818885430180233680.jpg", "11/06/2021"),

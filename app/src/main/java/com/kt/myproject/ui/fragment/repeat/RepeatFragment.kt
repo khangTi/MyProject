@@ -23,10 +23,8 @@ class RepeatFragment : BaseFragment<RepeatBinding>() {
     }
 
     override fun onViewCreated() {
+        MainScope().launch { job = viewModel.repeatLog() }
         setupAdapter()
-        MainScope().launch {
-            job = viewModel.repeatLog()
-        }
     }
 
     override fun onLiveDataObserve() {
