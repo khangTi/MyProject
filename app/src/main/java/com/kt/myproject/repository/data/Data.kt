@@ -10,10 +10,12 @@ package com.kt.myproject.repository.data
  */
 val list = listOf(
     UI.BASIC_COROUTINE,
-    UI.RETROFIT_COROUTINE
+    UI.RETROFIT_COROUTINE,
+    UI.NOTIFY_LIST
 )
 
 enum class UI {
     BASIC_COROUTINE,
-    RETROFIT_COROUTINE
+    RETROFIT_COROUTINE,
+    NOTIFY_LIST
 }

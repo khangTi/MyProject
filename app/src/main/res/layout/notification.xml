@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/notifiSmallIcon"
+        android:text="Small Icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/notifiLargeIcon"
+        android:text="Large Icon"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/notifiWithAction"
+        android:text="With Action"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/notifiWithSound"
+        android:text="With Sound"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/notifiBigContent"
+        android:text="Big Content"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/notifiBigImage"
+        android:text="Big Image"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

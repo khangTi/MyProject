@@ -19,4 +19,6 @@ object NavigationId {
     val restful = NavigationDirections.actionGlobalRestfulFragment()
 
     val cartDialog = NavigationDirections.actionGlobalCartDialog()
+
+    val notification = NavigationDirections.actionGlobalNotificationFragment()
 }

@@ -33,6 +33,7 @@ class HomeFragment : BaseFragment<HomeBinding>() {
         when (s) {
             UI.BASIC_COROUTINE -> navigate(NavigationId.repeat)
             UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
+            UI.NOTIFY_LIST -> navigate(NavigationId.notification)
         }
     }
 
