@@ -6,30 +6,24 @@ import android.content.Context
 import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import android.os.Build
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.core.app.NotificationCompat
 import com.kt.myproject.R
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.databinding.NotificationBinding
 
 
-class NotificationFragment : BaseFragment<NotificationBinding>() {
+class NotificationFragment : BaseFragment<NotificationBinding>(NotificationBinding::inflate) {
 
     private val channelId = "Notification"
     private var idNotification = 0
 
-    override fun getBinding(inflater: LayoutInflater, vg: ViewGroup?): NotificationBinding {
-        return NotificationBinding.inflate(inflater, vg, false)
-    }
-
     override fun onViewCreated() {
-        view.notifiSmallIcon.actionClickListener(this::setupSmallIcon)
-        view.notifiLargeIcon.actionClickListener(this::setupLargeIcon)
-        view.notifiWithAction.actionClickListener(this::setupWithAction)
-        view.notifiWithSound.actionClickListener(this::setupWithSound)
-        view.notifiBigContent.actionClickListener(this::setupBigContent)
-        view.notifiBigImage.actionClickListener(this::setupBigImage)
+        binding.notifiSmallIcon.actionClickListener(this::setupSmallIcon)
+        binding.notifiLargeIcon.actionClickListener(this::setupLargeIcon)
+        binding.notifiWithAction.actionClickListener(this::setupWithAction)
+        binding.notifiWithSound.actionClickListener(this::setupWithSound)
+        binding.notifiBigContent.actionClickListener(this::setupBigContent)
+        binding.notifiBigImage.actionClickListener(this::setupBigImage)
     }
 
     override fun onLiveDataObserve() {

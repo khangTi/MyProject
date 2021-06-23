@@ -15,7 +15,8 @@ import com.kt.myproject.repository.data.UI
  * @Description: ...
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
- */class HomeAdapter : BaseRecyclerAdapterBinding<UI, ItemHomeBinding>() {
+ */
+class HomeAdapter : BaseRecyclerAdapterBinding<UI, ItemHomeBinding>() {
 
     override fun getBinding(context: Context, parent: ViewGroup): ItemHomeBinding {
         return ItemHomeBinding.inflate(LayoutInflater.from(context), parent, false)

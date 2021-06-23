@@ -6,22 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.kt.myproject.ui.activity.MainActivity
 
-abstract class BaseFragment<VB : ViewBinding>: Fragment(), BaseView {
+typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
-    lateinit var view : VB
+abstract class BaseFragment<VB : ViewBinding>(val inflate: Inflate<VB>) : Fragment(), BaseView {
+
+    lateinit var binding: VB
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        view = getBinding(inflater, container)
-        return view.root
+        binding = inflate.invoke(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,8 +35,6 @@ abstract class BaseFragment<VB : ViewBinding>: Fragment(), BaseView {
     /**
      * [BaseFragment] required implements
      */
-    abstract fun getBinding(inflater: LayoutInflater, vg: ViewGroup?): VB
-
     abstract fun onViewCreated()
 
     abstract fun onLiveDataObserve()
@@ -48,9 +48,9 @@ abstract class BaseFragment<VB : ViewBinding>: Fragment(), BaseView {
      * [BaseFragment] properties
      */
 
-    open fun activity(): BaseActivity {
-        if (activity !is BaseActivity) throw ClassCastException("BaseFragment must be owned in BaseActivity")
-        return activity as BaseActivity
+    open fun activity(): MainActivity {
+        if (activity !is MainActivity) throw ClassCastException("BaseFragment must be owned in BaseActivity")
+        return activity as MainActivity
     }
 
     fun startClear(cls: Class<*>) {

@@ -50,4 +50,12 @@
         android:id="@+id/action_global_notificationFragment"
         app:destination="@id/notificationFragment" />
 
+    <fragment
+        android:id="@+id/memberFragment"
+        android:name="com.kt.myproject.ui.fragment.member.MemberFragment"
+        android:label="MemberFragment" />
+    <action
+        android:id="@+id/action_global_memberFragment"
+        app:destination="@id/memberFragment" />
+
 </navigation>

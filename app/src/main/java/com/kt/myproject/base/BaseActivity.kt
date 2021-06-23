@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity : AppCompatActivity(), BaseView {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), BaseView {
+
+    lateinit var binding : VB
 
     /**
      * [AppCompatActivity] override
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(view.root)
+        binding = viewBinding()
+        setContentView(binding.root)
         onViewCreated()
         onLiveDataObserve()
     }
@@ -20,7 +23,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     /**
      * [BaseActivity] abstract implements
      */
-    abstract val view: ViewBinding // initialize the view with by lazy
+    abstract fun viewBinding() : VB
 
     abstract fun onViewCreated()
 

@@ -10,17 +10,13 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
-class RepeatFragment : BaseFragment<RepeatBinding>() {
+class RepeatFragment : BaseFragment<RepeatBinding>(RepeatBinding::inflate) {
 
     private var job: Job? = null
 
     private val adapter = RepeatAdapter()
 
     private val viewModel: RepeatVM by viewModels()
-
-    override fun getBinding(inflater: LayoutInflater, vg: ViewGroup?): RepeatBinding {
-        return RepeatBinding.inflate(inflater, vg, false)
-    }
 
     override fun onViewCreated() {
         MainScope().launch { job = viewModel.repeatLog() }
@@ -31,13 +27,13 @@ class RepeatFragment : BaseFragment<RepeatBinding>() {
         viewModel.listLiveData.obsever {
             adapter.set(it)
             adapter.notifyDataSetChanged()
-            view.repeatRecycler.smoothScrollToPosition(it.size)
+            binding.repeatRecycler.smoothScrollToPosition(it.size)
         }
     }
 
     private fun setupAdapter() {
         adapter.set(viewModel.listLiveData.value)
-        adapter.bind(view.repeatRecycler)
+        adapter.bind(binding.repeatRecycler)
     }
 
     override fun onDestroyView() {

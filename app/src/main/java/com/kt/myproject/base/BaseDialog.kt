@@ -9,9 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.kt.myproject.R
 
-abstract class BaseDialog<VB : ViewBinding> : DialogFragment(), BaseView {
+abstract class BaseDialog<VB : ViewBinding>(val inflate : Inflate<VB>) : DialogFragment(), BaseView {
 
-    lateinit var view: VB
+    lateinit var binding: VB
 
     /**
      * [DialogFragment] override
@@ -32,8 +32,8 @@ abstract class BaseDialog<VB : ViewBinding> : DialogFragment(), BaseView {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        view = getBinding(inflater, container)
-        return view.root
+        binding = inflate.invoke(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,11 +51,6 @@ abstract class BaseDialog<VB : ViewBinding> : DialogFragment(), BaseView {
             }
         }
     }
-
-    /**
-     * [BaseDialog] Required implements
-     */
-    abstract fun getBinding(inflater: LayoutInflater, viewGroup: ViewGroup?): VB
 
     abstract fun onViewCreated()
 
