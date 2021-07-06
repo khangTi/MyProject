@@ -2,6 +2,7 @@ package com.kt.myproject.utils
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.kt.myproject.app.app
 
 /**
  * -------------------------------------------------------------------------------------------------
@@ -12,5 +13,9 @@ import com.bumptech.glide.Glide
  * -------------------------------------------------------------------------------------------------
  */
 fun ImageView.load(url: String) {
-    Glide.with(context).load(url).into(this)
+    Glide.with(app).load(url).into(this).clearOnDetach()
+}
+
+fun ImageView.load(image: Int) {
+    Glide.with(app).load(image).into(this).clearOnDetach()
 }

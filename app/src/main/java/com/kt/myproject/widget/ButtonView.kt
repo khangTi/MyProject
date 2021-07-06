@@ -1,10 +1,9 @@
 package com.kt.myproject.widget
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.util.AttributeSet
-import android.view.LayoutInflater
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.kt.myproject.R
+import com.kt.myproject.base.AppBindCustomView
 import com.kt.myproject.databinding.ButtonViewBinding
 import com.kt.myproject.utils.animClick
 
@@ -17,19 +16,15 @@ import com.kt.myproject.utils.animClick
  * -------------------------------------------------------------------------------------------------
  */
 class ButtonView(context: Context, attributeSet: AttributeSet) :
-    ConstraintLayout(context, attributeSet) {
+    AppBindCustomView<ButtonViewBinding>(context, attributeSet, ButtonViewBinding::inflate) {
 
-    private val binding = ButtonViewBinding.inflate(LayoutInflater.from(context), this, true)
-
-    init {
-        val types = context.theme.obtainStyledAttributes(attributeSet, R.styleable.CustomView, 0, 0)
-
-        val text = types.getString(R.styleable.CustomView_android_text)
-        binding.buttonAction.text = text
+    override fun onViewInit(context: Context, types: TypedArray) {
+        val text = types.text
+        bd.buttonAction.text = text
     }
 
     fun actionClickListener(block: () -> Unit) {
-        binding.buttonAction.animClick {
+        bd.buttonAction.animClick {
             block()
         }
     }

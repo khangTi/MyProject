@@ -21,4 +21,6 @@ object NavigationId {
     val cartDialog = NavigationDirections.actionGlobalCartDialog()
 
     val notification = NavigationDirections.actionGlobalNotificationFragment()
+
+    val floating = NavigationDirections.actionGlobalFloatingFragment()
 }

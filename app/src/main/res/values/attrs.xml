@@ -2,7 +2,50 @@
 <resources>
 
     <declare-styleable name="CustomView">
-        <attr name="android:text" format="string"/>
+        <!--TEXT-->
+        <attr name="android:title" format="string" />
+        <attr name="android:text" format="string" />
+        <attr name="android:hint" format="string" />
+        <!--INPUT TYPE-->
+        <attr name="android:textAllCaps" format="boolean" />
+        <attr name="android:maxLength" format="integer" />
+        <attr name="android:inputType" format="reference" />
+        <attr name="android:imeOptions" format="reference" />
+        <attr name="android:maxLines" format="integer" />
+        <attr name="android:textStyle" format="integer" />
+        <attr name="android:nextFocusForward" format="integer" />
+        <!--COLOR-->
+        <attr name="android:textColor" format="reference" />
+        <attr name="android:textColorHint" format="reference" />
+        <attr name="android:tint" format="integer" />
+        <attr name="android:drawableTint" format="integer" />
+        <attr name="android:backgroundTint" format="integer" />
+        <!--DRAWABLE-->
+        <attr name="android:src" format="reference" />
+        <attr name="android:background" format="reference" />
+        <attr name="android:drawableStart" format="reference" />
+        <attr name="android:drawableEnd" format="reference" />
+        <attr name="android:drawable" format="reference" />
+        <!--CHECKABLE-->
+        <attr name="android:checked" format="boolean" />
+        <attr name="android:checkable" format="boolean" />
+        <!--LAYOUT-->
+        <attr name="android:gravity" format="reference" />
+        <attr name="android:orientation" format="integer" />
+        <attr name="android:radius" format="integer" />
+        <!--PADDING-->
+        <attr name="android:paddingStart" format="dimension" />
+        <attr name="android:paddingEnd" format="dimension" />
+        <attr name="android:paddingTop" format="dimension" />
+        <attr name="android:paddingBottom" format="dimension" />
+        <!--CUSTOM-->
+        <attr name="input_button" format="string" />
+        <attr name="input_title_visible" format="boolean" />
+        <attr name="input_error_visible" format="boolean" />
+        <attr name="input_hint" format="string"/>
+        <!--CONFIG_ICON-->
+        <attr name="back" format="boolean"/>
+        <attr name="cancel" format="boolean"/>
         <attr name="hideAction" format="boolean"/>
     </declare-styleable>
 

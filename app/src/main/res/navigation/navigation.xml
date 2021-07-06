@@ -51,11 +51,12 @@
         app:destination="@id/notificationFragment" />
 
     <fragment
-        android:id="@+id/memberFragment"
-        android:name="com.kt.myproject.ui.fragment.member.MemberFragment"
-        android:label="MemberFragment" />
+        android:id="@+id/floatingFragment"
+        android:name="com.kt.myproject.ui.fragment.floating.FloatingFragment"
+        android:label="FloatingFragment"
+        tools:layout="@layout/floatingAction"/>
     <action
-        android:id="@+id/action_global_memberFragment"
-        app:destination="@id/memberFragment" />
+        android:id="@+id/action_global_floatingFragment"
+        app:destination="@id/floatingFragment" />
 
 </navigation>

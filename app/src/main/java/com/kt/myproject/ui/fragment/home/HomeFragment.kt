@@ -6,6 +6,7 @@ import com.kt.myproject.databinding.HomeBinding
 import com.kt.myproject.repository.data.UI
 import com.kt.myproject.repository.data.list
 import com.kt.myproject.ui.adapter.HomeAdapter
+import com.kt.myproject.utils.toast
 
 class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
 
@@ -24,12 +25,11 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
     }
 
     private fun navigationUI(s: UI) {
-        navigate(NavigationId.cartDialog)
-        return
         when (s) {
             UI.BASIC_COROUTINE -> navigate(NavigationId.repeat)
             UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
             UI.NOTIFY_LIST -> navigate(NavigationId.notification)
+            UI.FLOAT_ANIM -> navigate(NavigationId.floating)
         }
     }
 
