@@ -77,7 +77,7 @@ class SlideView(context: Context, attrs: AttributeSet) :
         override fun getCount(): Int = listAdv.size
 
         inner class SlideAdapterVH(itemView: View) : SliderViewAdapter.ViewHolder(itemView) {
-            val image: ImageView = itemView.findViewById<ImageView>(R.id.itemSlideImage)
+            val image: ImageView = itemView.findViewById(R.id.itemSlideImage)
         }
 
     }

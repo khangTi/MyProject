@@ -22,5 +22,5 @@ object NavigationId {
 
     val notification = NavigationDirections.actionGlobalNotificationFragment()
 
-    val floating = NavigationDirections.actionGlobalFloatingFragment()
+    val floating = NavigationDirections.actionGlobalSlideFragment()
 }

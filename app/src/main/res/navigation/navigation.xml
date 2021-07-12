@@ -51,12 +51,12 @@
         app:destination="@id/notificationFragment" />
 
     <fragment
-        android:id="@+id/floatingFragment"
-        android:name="com.kt.myproject.ui.fragment.floating.FloatingFragment"
-        android:label="FloatingFragment"
-        tools:layout="@layout/floatingAction"/>
+        android:id="@+id/slideFragment"
+        android:name="com.kt.myproject.ui.fragment.floating.SlideFragment"
+        android:label="SlideFragment"
+        tools:layout="@layout/slide"/>
     <action
-        android:id="@+id/action_global_floatingFragment"
-        app:destination="@id/floatingFragment" />
+        android:id="@+id/action_global_slideFragment"
+        app:destination="@id/slideFragment" />
 
 </navigation>

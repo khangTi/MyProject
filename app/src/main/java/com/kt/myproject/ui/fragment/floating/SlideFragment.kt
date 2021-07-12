@@ -2,12 +2,18 @@ package com.kt.myproject.ui.fragment.floating
 
 import com.kt.myproject.R
 import com.kt.myproject.base.BaseFragment
-import com.kt.myproject.databinding.FloatingActionBinding
+import com.kt.myproject.databinding.SlideBinding
 
-class FloatingFragment : BaseFragment<FloatingActionBinding>(FloatingActionBinding::inflate) {
+class SlideFragment : BaseFragment<SlideBinding>(SlideBinding::inflate) {
 
     override fun onViewCreated() {
-        binding.floatingSlider.initSlider(listOf(R.mipmap.img_adv_1, R.mipmap.img_adv_2))
+        binding.floatingSlider.initSlider(
+            listOf(
+                R.mipmap.img_adv1,
+                R.mipmap.img_adv2,
+                R.mipmap.img_adv3
+            )
+        )
     }
 
     override fun onLiveDataObserve() {
