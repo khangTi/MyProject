@@ -65,34 +65,34 @@ public class ScanHostsAsyncTask extends AsyncTask<Integer, Void, Void> {
         // Android 10+ doesn't let us access the ARP table.
         // Do an early check to see if we can get what we need from the system.
         // https://developer.android.com/about/versions/10/privacy/changes#proc-net-filesystem
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             try {
                 Process ipProc = Runtime.getRuntime().exec(IP_CMD);
                 ipProc.waitFor();
                 if (ipProc.exitValue() != 0) {
-                    /*activity.processFinish(new IOException(ctx.getResources().getString(R.string.errAccessArp)));
-                    activity.processFinish(true);*/
+                    activity.processFinish(new IOException(ctx.getResources().getString(R.string.errAccessArp)));
+                    activity.processFinish(true);
 
-                   /* return null;*/
+                    return null;
                 }
             } catch (IOException | InterruptedException e) {
-               /* activity.processFinish(new IOException(ctx.getResources().getString(R.string.errParseArp)));
-                activity.processFinish(true);*/
+                activity.processFinish(new IOException(ctx.getResources().getString(R.string.errParseArp)));
+                activity.processFinish(true);
             }
         } else {
             File file = new File(ARP_TABLE);
             if (!file.exists()) {
-                /*activity.processFinish(new FileNotFoundException(ctx.getResources().getString(R.string.errFindArp)));
-                activity.processFinish(true);*/
+                activity.processFinish(new FileNotFoundException(ctx.getResources().getString(R.string.errFindArp)));
+                activity.processFinish(true);
 
-                /*return null;*/
+                return null;
             }
 
             if (!file.canRead()) {
-                /*activity.processFinish(new IOException(ctx.getResources().getString(R.string.errReadArp)));
-                activity.processFinish(true);*/
+                activity.processFinish(new IOException(ctx.getResources().getString(R.string.errReadArp)));
+                activity.processFinish(true);
             }
-        }
+        }*/
 
         ExecutorService executor = Executors.newCachedThreadPool();
 
@@ -146,9 +146,6 @@ public class ScanHostsAsyncTask extends AsyncTask<Integer, Void, Void> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 Process ipProc = Runtime.getRuntime().exec(IP_CMD);
                 ipProc.waitFor();
-               /* if (ipProc.exitValue() != 0) {
-                    throw new Exception(ctx.getResources().getString(R.string.errAccessArp));
-                }*/
 
                 reader = new BufferedReader(new InputStreamReader(ipProc.getInputStream(), "UTF-8"));
                 String line;
@@ -171,7 +168,9 @@ public class ScanHostsAsyncTask extends AsyncTask<Integer, Void, Void> {
 
                     // Determine if the ARP entry is valid.
                     // https://github.com/sivasankariit/iproute2/blob/master/ip/ipneigh.c
-                    pairs.add(new Pair<>(ip, macAddress));
+                    if (!NEIGHBOR_FAILED.equals(state) && !NEIGHBOR_INCOMPLETE.equals(state)) {
+                        pairs.add(new Pair<>(ip, macAddress));
+                    }
                 }
             } else {
                 reader = new BufferedReader(new InputStreamReader(new FileInputStream(ARP_TABLE), "UTF-8"));
@@ -184,7 +183,9 @@ public class ScanHostsAsyncTask extends AsyncTask<Integer, Void, Void> {
                     String flag = arpLine[2];
                     String macAddress = arpLine[3];
 
-                    pairs.add(new Pair<>(ip, macAddress));
+                    if (!ARP_INCOMPLETE.equals(flag) && !ARP_INACTIVE.equals(macAddress)) {
+                        pairs.add(new Pair<>(ip, macAddress));
+                    }
                 }
             }
 

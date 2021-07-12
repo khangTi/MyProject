@@ -87,22 +87,26 @@ class PortFragment : BaseFragment<PortBinding>(PortBinding::inflate) {
         val ip = wifiManager.connectionInfo.ipAddress
         ScanHostsAsyncTask(object : MainAsyncResponse{
             override fun processFinish(h: Host?, i: AtomicInteger?) {
-                print("")
+                log.e("scanIpOpenPort $h")
             }
 
             override fun processFinish(output: Int) {
+                print("")
             }
 
             override fun processFinish(output: String?) {
+                print("")
             }
 
             override fun processFinish(output: Boolean) {
+                print("")
             }
 
             override fun <T : Throwable?> processFinish(output: T) {
+                print("")
             }
 
-        }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, ip, wifi?.internalWifiSubnet, 4000);
+        }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, 168427745, 24, 150);
     }
 
     override fun onResume() {
