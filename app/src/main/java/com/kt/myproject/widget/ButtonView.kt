@@ -5,7 +5,7 @@ import android.content.res.TypedArray
 import android.util.AttributeSet
 import com.kt.myproject.base.AppBindCustomView
 import com.kt.myproject.databinding.ButtonViewBinding
-import com.kt.myproject.utils.animClick
+import com.kt.myproject.ex.animClick
 
 /**
  * -------------------------------------------------------------------------------------------------

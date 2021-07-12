@@ -12,12 +12,16 @@ val list = listOf(
     UI.BASIC_COROUTINE,
     UI.RETROFIT_COROUTINE,
     UI.NOTIFY_LIST,
-    UI.SLIDE
+    UI.SLIDE,
+    UI.DATA_STORE,
+    UI.PORT
 )
 
 enum class UI {
     BASIC_COROUTINE,
     RETROFIT_COROUTINE,
     NOTIFY_LIST,
-    SLIDE
+    SLIDE,
+    DATA_STORE,
+    PORT
 }

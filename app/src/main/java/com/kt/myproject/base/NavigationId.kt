@@ -23,4 +23,6 @@ object NavigationId {
     val notification = NavigationDirections.actionGlobalNotificationFragment()
 
     val floating = NavigationDirections.actionGlobalSlideFragment()
+
+    val port = NavigationDirections.actionGlobalPortFragment()
 }

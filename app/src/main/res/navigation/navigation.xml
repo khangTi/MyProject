@@ -59,4 +59,13 @@
         android:id="@+id/action_global_slideFragment"
         app:destination="@id/slideFragment" />
 
+    <fragment
+        android:id="@+id/portFragment"
+        android:name="com.kt.myproject.ui.fragment.port.PortFragment"
+        android:label="PortFragment"
+        tools:layout="@layout/port"/>
+    <action
+        android:id="@+id/action_global_portFragment"
+        app:destination="@id/portFragment" />
+
 </navigation>

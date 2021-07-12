@@ -4,10 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.viewbinding.ViewBinding
+import com.kt.myproject.utils.Logger
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), BaseView {
 
-    lateinit var binding : VB
+    val log by lazy {
+        Logger(this::class.simpleName.toString())
+    }
+
+    lateinit var binding: VB
 
     /**
      * [AppCompatActivity] override
@@ -23,7 +28,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), BaseView {
     /**
      * [BaseActivity] abstract implements
      */
-    abstract fun viewBinding() : VB
+    abstract fun viewBinding(): VB
 
     abstract fun onViewCreated()
 
@@ -40,10 +45,6 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), BaseView {
      */
     open fun navigationHostId(): Int {
         return 0
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 
 }

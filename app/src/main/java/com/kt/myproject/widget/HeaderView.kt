@@ -6,8 +6,8 @@ import android.util.AttributeSet
 import android.view.Gravity
 import com.kt.myproject.base.AppBindCustomView
 import com.kt.myproject.databinding.HeaderViewBinding
-import com.kt.myproject.utils.hide
-import com.kt.myproject.utils.show
+import com.kt.myproject.ex.hide
+import com.kt.myproject.ex.show
 
 class HeaderView(context: Context, attributeSet: AttributeSet) :
     AppBindCustomView<HeaderViewBinding>(context, attributeSet, HeaderViewBinding::inflate) {

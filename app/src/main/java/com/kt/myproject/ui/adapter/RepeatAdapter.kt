@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.kt.myproject.base.BaseRecyclerAdapterBinding
 import com.kt.myproject.databinding.ItemRepeatBinding
 import com.kt.myproject.repository.model.RepeatData
-import com.kt.myproject.utils.load
+import com.kt.myproject.ex.load
 
 /**
  * -------------------------------------------------------------------------------------------------

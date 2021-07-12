@@ -11,7 +11,7 @@ import android.widget.ImageView
 import com.kt.myproject.R
 import com.kt.myproject.base.AppBindCustomView
 import com.kt.myproject.databinding.SlideViewBinding
-import com.kt.myproject.utils.load
+import com.kt.myproject.ex.load
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView

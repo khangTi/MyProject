@@ -4,7 +4,7 @@ import androidx.fragment.app.viewModels
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.databinding.RestfulBinding
 import com.kt.myproject.ui.adapter.RestfulAdapter
-import com.kt.myproject.utils.toast
+import com.kt.myproject.ex.toast
 
 class RestfulFragment : BaseFragment<RestfulBinding>(RestfulBinding::inflate) {
 

@@ -3,7 +3,7 @@ package com.kt.myproject.repository.api
 import com.kt.myproject.repository.model.ResponseData
 import com.kt.myproject.repository.model.User
 import com.kt.myproject.repository.model.UserResp
-import com.kt.myproject.utils.toArray
+import com.kt.myproject.ex.toArray
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.flow
 

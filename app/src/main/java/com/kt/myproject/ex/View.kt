@@ -1,4 +1,4 @@
-package com.kt.myproject.utils
+package com.kt.myproject.ex
 
 import android.os.Looper
 import android.view.View

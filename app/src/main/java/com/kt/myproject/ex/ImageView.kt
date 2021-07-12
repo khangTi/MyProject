@@ -1,4 +1,4 @@
-package com.kt.myproject.utils
+package com.kt.myproject.ex
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

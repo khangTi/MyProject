@@ -1,4 +1,4 @@
-package com.kt.myproject.utils
+package com.kt.myproject.ex
 
 import com.google.gson.Gson
 import com.google.gson.JsonArray

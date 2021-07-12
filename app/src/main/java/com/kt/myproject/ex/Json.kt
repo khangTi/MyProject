@@ -1,4 +1,4 @@
-package com.kt.myproject.utils
+package com.kt.myproject.ex
 
 import com.google.gson.Gson
 import com.google.gson.JsonArray
@@ -7,7 +7,6 @@ import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import java.io.StringReader
 import java.math.BigDecimal
-import kotlin.reflect.KClass
 
 private val convertFactory: Gson = Gson()
 
