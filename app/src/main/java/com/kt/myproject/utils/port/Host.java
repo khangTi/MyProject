@@ -92,10 +92,6 @@ public class Host implements Serializable {
         return mac;
     }
 
-    public void wakeOnLan() {
-        new WolAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, mac, ip);
-    }
-
     /**
      * Starts a port scan
      *

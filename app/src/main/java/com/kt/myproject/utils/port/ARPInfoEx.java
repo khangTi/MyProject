@@ -17,10 +17,10 @@ import java.util.HashMap;
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-public class ARPInfo {
+public class ARPInfoEx {
 
     // This class is not to be instantiated
-    private ARPInfo() {
+    private ARPInfoEx() {
     }
 
 

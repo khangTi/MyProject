@@ -1,5 +1,7 @@
 package com.kt.myproject.utils.port;
 
+import java.net.InetAddress;
+
 /**
  * -------------------------------------------------------------------------------------------------
  *
@@ -9,5 +11,25 @@ package com.kt.myproject.utils.port;
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class Device {
+public class Device {
+    public String ip;
+    public String hostname;
+    public String mac;
+    public float time = 0;
+
+    public Device(InetAddress ip) {
+        this.ip = ip.getHostAddress();
+        this.hostname = ip.getCanonicalHostName();
+    }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "ip='" + ip + '\'' +
+                ", hostname='" + hostname + '\'' +
+                ", mac='" + mac + '\'' +
+                ", time=" + time +
+                '}';
+    }
 }
+

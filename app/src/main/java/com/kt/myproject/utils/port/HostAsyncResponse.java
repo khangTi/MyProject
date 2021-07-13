@@ -9,5 +9,5 @@ package com.kt.myproject.utils.port;
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-public interface HostAsyncResponse extends LanHostAsyncResponse, WanHostAsyncResponse, ErrorAsyncResponse {
+public interface HostAsyncResponse extends LanHostAsyncResponse, ErrorAsyncResponse {
 }

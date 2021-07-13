@@ -16,4 +16,5 @@ interface ErrorAsyncResponse {
      *
      * @param output
      */
+    <T extends Throwable> void processFinish(T output);
 }
