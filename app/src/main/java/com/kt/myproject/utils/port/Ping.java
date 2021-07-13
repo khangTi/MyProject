@@ -4,16 +4,10 @@ package com.kt.myproject.utils.port;
  * -------------------------------------------------------------------------------------------------
  *
  * @Project: no name
- * @Created: KOP 2021/07/12
+ * @Created: KOP 2021/07/13
  * @Description: ...
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-interface ErrorAsyncResponse {
-
-    /**
-     * Delegate to bubble up errors
-     *
-     * @param output
-     */
+class Ping {
 }
