@@ -60,12 +60,21 @@
         app:destination="@id/slideFragment" />
 
     <fragment
-        android:id="@+id/portFragment"
-        android:name="com.kt.myproject.ui.fragment.port.PortFragment"
-        android:label="PortFragment"
-        tools:layout="@layout/port"/>
+        android:id="@+id/preferencesFragment"
+        android:name="com.kt.myproject.ui.fragment.store.preferences.PreferencesFragment"
+        android:label="preferencesFragment"
+        tools:layout="@layout/preferences" />
     <action
-        android:id="@+id/action_global_portFragment"
-        app:destination="@id/portFragment" />
+        android:id="@+id/action_global_preferencesFragment"
+        app:destination="@id/preferencesFragment" />
+
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.kt.myproject.ui.fragment.store.data.DataFragment"
+        android:label="dataFragment"
+        tools:layout="@layout/data" />
+    <action
+        android:id="@+id/action_global_dataFragment"
+        app:destination="@id/dataFragment" />
 
 </navigation>

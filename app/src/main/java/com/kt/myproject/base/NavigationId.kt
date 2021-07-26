@@ -24,5 +24,7 @@ object NavigationId {
 
     val floating = NavigationDirections.actionGlobalSlideFragment()
 
-    val port = NavigationDirections.actionGlobalPortFragment()
+    val preferences = NavigationDirections.actionGlobalPreferencesFragment()
+
+    val dataStore = NavigationDirections.actionGlobalDataFragment()
 }

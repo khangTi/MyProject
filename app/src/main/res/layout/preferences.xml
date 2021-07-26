@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/preferences_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:imeOptions="actionDone"
+        android:maxLength="20"
+        android:maxLines="1" />
+
+    <com.kt.myproject.widget.ButtonView
+        android:id="@+id/preferences_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/preferences_save" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/preferences_label"
+        style="@style/TextView.Text18"
+        android:layout_marginTop="40dp"
+        tools:text="placeholder value" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

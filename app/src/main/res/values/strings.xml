@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">TestCorotine</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="errAccessArp">Unable to access ARP entries</string>
-    <string name="errParseArp">Unable to parse ARP entries</string>
-    <string name="errFindArp">Unable to find ARP table</string>
-    <string name="errReadArp">Unable to read ARP table</string>
+
+    <string name="preferences_save">save value</string>
 </resources>
