@@ -68,13 +68,4 @@
         android:id="@+id/action_global_preferencesFragment"
         app:destination="@id/preferencesFragment" />
 
-    <fragment
-        android:id="@+id/dataFragment"
-        android:name="com.kt.myproject.ui.fragment.store.data.DataFragment"
-        android:label="dataFragment"
-        tools:layout="@layout/data" />
-    <action
-        android:id="@+id/action_global_dataFragment"
-        app:destination="@id/dataFragment" />
-
 </navigation>

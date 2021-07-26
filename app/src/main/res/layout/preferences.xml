@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:imeOptions="actionDone"
-        android:maxLength="20"
-        android:maxLines="1" />
+        android:inputType="text"
+        android:maxLength="20" />
 
     <com.kt.myproject.widget.ButtonView
         android:id="@+id/preferences_action"

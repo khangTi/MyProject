@@ -1,5 +1,6 @@
 package com.kt.myproject.ui.fragment.store.preferences
 
+import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.lifecycleScope
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.databinding.PreferencesBinding
@@ -15,21 +16,32 @@ class PreferencesFragment : BaseFragment<PreferencesBinding>(PreferencesBinding:
     override fun onViewCreated() {
         getValueStore()
         binding.preferencesAction.actionClickListener {
-            val input = binding.preferencesInput.text
-            when (input.isNullOrEmpty()) {
-                true -> toast("text is NullOrEmpty")
-                else -> {
-                    lifecycleScope.launch(Dispatchers.IO) {
-                        PreferencesStore.saveData(input.toString())
-                    }
-                    binding.preferencesInput.setText("")
-                    getValueStore()
-                }
+            updateDataStore()
+        }
+        binding.preferencesInput.setOnEditorActionListener { _, actionId, _ ->
+            when (actionId == EditorInfo.IME_ACTION_DONE) {
+                true -> updateDataStore()
+                else -> ""
             }
+            true
         }
     }
 
     override fun onLiveDataObserve() {}
+
+    private fun updateDataStore() {
+        val input = binding.preferencesInput.text
+        when (input.isNullOrEmpty()) {
+            true -> toast("text is NullOrEmpty")
+            else -> {
+                lifecycleScope.launch(Dispatchers.IO) {
+                    PreferencesStore.saveData(input.toString())
+                }
+                binding.preferencesInput.setText("")
+                getValueStore()
+            }
+        }
+    }
 
     private fun getValueStore() {
         lifecycleScope.launch(Dispatchers.IO) {
