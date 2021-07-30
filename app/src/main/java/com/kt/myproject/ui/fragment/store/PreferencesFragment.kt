@@ -1,4 +1,4 @@
-package com.kt.myproject.ui.fragment.store.preferences
+package com.kt.myproject.ui.fragment.store
 
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.lifecycleScope
@@ -46,7 +46,7 @@ class PreferencesFragment : BaseFragment<PreferencesBinding>(PreferencesBinding:
     private fun getValueStore() {
         lifecycleScope.launch(Dispatchers.IO) {
             PreferencesStore.value.collect {
-                post { binding.preferencesLabel.text = it }
+                launch { binding.preferencesLabel.text = it }
             }
         }
     }

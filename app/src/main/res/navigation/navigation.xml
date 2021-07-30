@@ -61,7 +61,7 @@
 
     <fragment
         android:id="@+id/preferencesFragment"
-        android:name="com.kt.myproject.ui.fragment.store.preferences.PreferencesFragment"
+        android:name="com.kt.myproject.ui.fragment.store.PreferencesFragment"
         android:label="preferencesFragment"
         tools:layout="@layout/preferences" />
     <action
