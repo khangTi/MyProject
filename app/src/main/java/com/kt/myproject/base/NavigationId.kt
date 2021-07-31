@@ -25,4 +25,7 @@ object NavigationId {
     val floating = NavigationDirections.actionGlobalSlideFragment()
 
     val preferences = NavigationDirections.actionGlobalPreferencesFragment()
+
+    val gallery = NavigationDirections.actionGlobalGalleryFragment()
+
 }

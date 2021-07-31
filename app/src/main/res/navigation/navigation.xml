@@ -68,4 +68,13 @@
         android:id="@+id/action_global_preferencesFragment"
         app:destination="@id/preferencesFragment" />
 
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.kt.myproject.ui.fragment.gallery.GalleryFragment"
+        android:label="gallery"
+        tools:layout="@layout/gallery" />
+    <action
+        android:id="@+id/action_global_galleryFragment"
+        app:destination="@id/galleryFragment" />
+
 </navigation>

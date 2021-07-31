@@ -30,6 +30,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.NOTIFY_LIST -> navigate(NavigationId.notification)
             UI.SLIDE -> navigate(NavigationId.floating)
             UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
+            UI.GALLERY -> navigate(NavigationId.gallery)
         }
     }
 
