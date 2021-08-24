@@ -5,6 +5,7 @@ import com.kt.myproject.base.NavigationId
 import com.kt.myproject.databinding.HomeBinding
 import com.kt.myproject.repository.data.UI
 import com.kt.myproject.repository.data.list
+import com.kt.myproject.ui.activity.CallActivity
 import com.kt.myproject.ui.adapter.HomeAdapter
 
 class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
@@ -31,6 +32,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.ADV -> navigate(NavigationId.adv)
             UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
             UI.GALLERY -> navigate(NavigationId.gallery)
+            UI.CALL -> startClear(CallActivity::class.java)
         }
     }
 

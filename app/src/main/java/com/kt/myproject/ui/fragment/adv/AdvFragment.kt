@@ -15,11 +15,7 @@ class AdvFragment : BaseFragment<AdvBinding>(AdvBinding::inflate) {
         viewModel.fetchAdvList()
         viewModel.countdownToNextSlide()
         binding.advViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
+            override fun onPageScrolled(p: Int, Offset: Float, Pixels: Int) {
                 viewModel.countdownToNextSlide()
             }
         })

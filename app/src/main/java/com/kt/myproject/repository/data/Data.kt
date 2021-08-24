@@ -14,7 +14,8 @@ val list = listOf(
     UI.NOTIFY_LIST,
     UI.ADV,
     UI.PREFERENCES_DATA_STORE,
-    UI.GALLERY
+    UI.GALLERY,
+    UI.CALL
 )
 
 enum class UI {
@@ -23,5 +24,6 @@ enum class UI {
     NOTIFY_LIST,
     ADV,
     PREFERENCES_DATA_STORE,
-    GALLERY
+    GALLERY,
+    CALL
 }
