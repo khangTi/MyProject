@@ -22,7 +22,7 @@ object NavigationId {
 
     val notification = NavigationDirections.actionGlobalNotificationFragment()
 
-    val floating = NavigationDirections.actionGlobalSlideFragment()
+    val adv = NavigationDirections.actionGlobalSlideFragment()
 
     val preferences = NavigationDirections.actionGlobalPreferencesFragment()
 

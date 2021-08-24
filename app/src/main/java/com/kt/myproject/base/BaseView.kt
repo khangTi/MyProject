@@ -1,6 +1,7 @@
 package com.kt.myproject.base
 
 import android.view.View
+import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
@@ -14,7 +15,6 @@ interface BaseView {
 
     fun navigate(directions: NavDirections, block: (NavOptions.Builder.() -> Unit) = {}) {
         val options = NavOptions.Builder()
-            .setDefaultAnim()
         options.block()
         nav.navigate(directions, options.build())
     }

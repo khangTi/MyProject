@@ -1,11 +1,9 @@
 package com.kt.myproject.ui.fragment.repeat
 
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.databinding.RepeatBinding
 import com.kt.myproject.ui.adapter.RepeatAdapter
-import kotlinx.coroutines.launch
 
 class RepeatFragment : BaseFragment<RepeatBinding>(RepeatBinding::inflate) {
 
@@ -14,9 +12,6 @@ class RepeatFragment : BaseFragment<RepeatBinding>(RepeatBinding::inflate) {
     private val viewModel: RepeatVM by viewModels()
 
     override fun onViewCreated() {
-        lifecycleScope.launch {
-            viewModel.repeatLog()
-        }
         setupAdapter()
     }
 

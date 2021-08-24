@@ -52,9 +52,9 @@
 
     <fragment
         android:id="@+id/slideFragment"
-        android:name="com.kt.myproject.ui.fragment.floating.SlideFragment"
+        android:name="com.kt.myproject.ui.fragment.adv.AdvFragment"
         android:label="SlideFragment"
-        tools:layout="@layout/slide"/>
+        tools:layout="@layout/adv"/>
     <action
         android:id="@+id/action_global_slideFragment"
         app:destination="@id/slideFragment" />

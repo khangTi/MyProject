@@ -46,7 +46,7 @@ class PreferencesFragment : BaseFragment<PreferencesBinding>(PreferencesBinding:
     private fun getValueStore() {
         lifecycleScope.launch(Dispatchers.IO) {
             PreferencesStore.value.collect {
-                launch { binding.preferencesLabel.text = it }
+                launch(Dispatchers.Main) { binding.preferencesLabel.text = it }
             }
         }
     }

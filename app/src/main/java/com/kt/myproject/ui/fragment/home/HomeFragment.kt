@@ -28,7 +28,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.BASIC_COROUTINE -> navigate(NavigationId.repeat)
             UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
             UI.NOTIFY_LIST -> navigate(NavigationId.notification)
-            UI.SLIDE -> navigate(NavigationId.floating)
+            UI.ADV -> navigate(NavigationId.adv)
             UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
             UI.GALLERY -> navigate(NavigationId.gallery)
         }
