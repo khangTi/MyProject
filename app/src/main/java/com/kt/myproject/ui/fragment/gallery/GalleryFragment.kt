@@ -6,7 +6,6 @@ import com.kt.myproject.databinding.GalleryBinding
 class GalleryFragment : BaseFragment<GalleryBinding>(GalleryBinding::inflate) {
 
     override fun onViewCreated() {
-        binding.galleryInput.setupStubGallery(requireActivity())
     }
 
     override fun onLiveDataObserve() {

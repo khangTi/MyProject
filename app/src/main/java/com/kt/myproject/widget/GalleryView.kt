@@ -29,6 +29,7 @@ class GalleryView(context: Context, attrs: AttributeSet?) :
     }
 
     fun bindAdapterView() {
+        if (!adapter.currentList.isNullOrEmpty()) return
         CoroutineScope(Dispatchers.IO).launch {
             val list = Utils().getMediaInBucket(
                 context, Media.ALL_MEDIA_BUCKET_ID,

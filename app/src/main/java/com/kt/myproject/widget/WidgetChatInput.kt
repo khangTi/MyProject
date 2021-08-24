@@ -1,7 +1,6 @@
 package com.kt.myproject.widget
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.content.res.TypedArray
 import android.text.Editable
@@ -17,8 +16,6 @@ import com.kt.myproject.databinding.WidgetInputMessageBinding
 import com.kt.myproject.ex.SimpleTextWatcher
 import com.kt.myproject.ex.post
 import com.kt.myproject.ui.fragment.gallery.keyboard.KeyboardAwareLinearLayout
-import com.kt.myproject.ui.fragment.gallery.keyboard.Stub
-import com.kt.myproject.ui.fragment.gallery.keyboard.findStubById
 
 class WidgetChatInput(context: Context, attrs: AttributeSet?) :
     AppBindCustomView<WidgetInputMessageBinding>(
@@ -36,25 +33,25 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
             bd.chatInputInput.setText(value)
         }
 
-    private var galleryStub: Stub<GalleryView>? = null
-
-    private lateinit var act: Activity
-
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewInit(context: Context, types: TypedArray) {
+        setupStubGaller()
         bd.chatInputInput.addTextChangedListener(this)
         bd.chatInputAudio.setOnClickListener {
             listener?.onMicClick()
         }
         bd.chatInputEmoji.setOnClickListener {
+            hideGallery()
+            bd.widgetInputGallery.show(bd.chatInputInput, bd.emojiView)
             listener?.onEmojiClick()
         }
         bd.chatInputSend.setOnClickListener {
             listener?.onSendClick(text)
         }
         bd.chatInputPhoto.setOnClickListener {
-            bd.widgetInputGallery.show(bd.chatInputInput, galleryStub!!.get()!!)
-            galleryStub?.get()?.bindAdapterView()
+            hideEmoji()
+            bd.widgetInputGallery.show(bd.chatInputInput, bd.chatInputStub)
+            bd.chatInputStub.bindAdapterView()
         }
         bd.chatInputInput.setOnTouchListener { _, _ ->
             animViewFocus()
@@ -74,14 +71,15 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
         }
     }
 
-    fun setupStubGallery(act: Activity) {
-        this.act = act
+    private fun setupStubGaller() {
         bd.widgetInputGallery.setIsBubble(false)
         bd.widgetInputGallery.addOnKeyboardShownListener(this)
         bd.widgetInputGallery.hideAttachedInput(false)
-        galleryStub = findStubById((context as Activity), bd.widgetInputStub.id)
-        bd.widgetInputGallery.show(bd.chatInputInput, galleryStub!!.get()!!)
-        post(100) { bd.widgetInputGallery.hideAttachedInput(true) }
+        bd.widgetInputGallery.show(bd.chatInputInput, bd.chatInputStub)
+        post(100) {
+            hideEmoji()
+            bd.widgetInputGallery.hideAttachedInput(true)
+        }
     }
 
     override fun afterTextChanged(s: Editable?) {
@@ -145,6 +143,18 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
 
     override fun onKeyboardShown() {
         bd.widgetInputGallery.hideAttachedInput(true)
+    }
+
+    private fun hideGallery() {
+        if (bd.chatInputStub.isShowing()) {
+            bd.chatInputStub.hide(true)
+        }
+    }
+
+    private fun hideEmoji() {
+        if (bd.emojiView.isShowing()) {
+            bd.emojiView.hide(true)
+        }
     }
 
 }
