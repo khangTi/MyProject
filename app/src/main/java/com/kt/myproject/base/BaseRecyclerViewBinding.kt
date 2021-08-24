@@ -15,7 +15,7 @@ import androidx.viewbinding.ViewBinding
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-abstract class BaseRecyclerAdapterBinding<T, VB : ViewBinding> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+abstract class BaseRecyclerViewBinding<T, VB : ViewBinding> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var binding: VB
 

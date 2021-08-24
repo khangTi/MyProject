@@ -4,16 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.kt.myproject.widget.HeaderView
-        android:id="@+id/repeatHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Repeat"
-        app:hideAction="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/repeatRecycler"
         android:layout_width="match_parent"
@@ -21,6 +11,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repeatHeader" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

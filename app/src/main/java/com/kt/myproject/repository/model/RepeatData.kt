@@ -1,5 +1,7 @@
 package com.kt.myproject.repository.model
 
+import androidx.recyclerview.widget.DiffUtil
+
 /**
  * -------------------------------------------------------------------------------------------------
  * @Project: no name
@@ -18,6 +20,20 @@ class RepeatData {
         this.actor = actor
         this.image = image
         this.date = date
+    }
+
+    companion object{
+        val itemDiffer
+            get() = object : DiffUtil.ItemCallback<RepeatData>() {
+                override fun areItemsTheSame(oldItem: RepeatData, newItem: RepeatData): Boolean {
+                    return oldItem.actor === newItem.actor
+                }
+
+                override fun areContentsTheSame(oldItem: RepeatData, newItem: RepeatData): Boolean {
+                    return oldItem.image == newItem.image
+                }
+
+            }
     }
 
 }

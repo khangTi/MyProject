@@ -7,9 +7,9 @@ import android.util.AttributeSet
 import androidx.viewbinding.ViewBinding
 import com.kt.myproject.base.AppBindCustomView
 import com.kt.myproject.base.BaseBindRecyclerView
-import com.kt.myproject.base.ItemInflating
 import com.kt.myproject.databinding.GalleryItemImageBinding
 import com.kt.myproject.databinding.GalleryViewBinding
+import com.kt.myproject.ex.ItemInflating
 import com.kt.myproject.ex.load
 import com.kt.myproject.repository.model.Media
 import com.kt.myproject.ui.fragment.gallery.keyboard.InputAwareLayout

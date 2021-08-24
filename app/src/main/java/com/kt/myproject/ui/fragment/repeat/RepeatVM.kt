@@ -24,10 +24,10 @@ class RepeatVM : ViewModel() {
 
     suspend fun repeatLog(): Job {
         return CoroutineScope(Dispatchers.IO).launch {
-            delay(2000)
             val random = Random().nextInt(listRandomRepeat.size)
             list.add(listRandomRepeat[random])
             listLiveData.postValue(list)
+            delay(2000)
             repeatLog()
         }
     }

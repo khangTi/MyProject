@@ -8,6 +8,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.kt.myproject.R
+import com.kt.myproject.ex.Inflate
 
 abstract class BaseDialog<VB : ViewBinding>(val inflate : Inflate<VB>) : DialogFragment(), BaseView {
 

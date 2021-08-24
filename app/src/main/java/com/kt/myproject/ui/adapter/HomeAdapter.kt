@@ -1,11 +1,9 @@
 package com.kt.myproject.ui.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.kt.myproject.base.BaseRecyclerAdapterBinding
+import androidx.viewbinding.ViewBinding
+import com.kt.myproject.base.BaseBindRecyclerView
 import com.kt.myproject.databinding.ItemHomeBinding
+import com.kt.myproject.ex.ItemInflating
 import com.kt.myproject.repository.data.UI
 
 /**
@@ -16,13 +14,16 @@ import com.kt.myproject.repository.data.UI
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class HomeAdapter : BaseRecyclerAdapterBinding<UI, ItemHomeBinding>() {
+class HomeAdapter : BaseBindRecyclerView<UI>() {
 
-    override fun getBinding(context: Context, parent: ViewGroup): ItemHomeBinding {
-        return ItemHomeBinding.inflate(LayoutInflater.from(context), parent, false)
+    override fun itemInflating(item: UI, position: Int): ItemInflating {
+        return ItemHomeBinding::inflate
     }
 
-    override fun View.onBindModel(model: UI, position: Int, view: ItemHomeBinding) {
-        view.itemHomeLabel.text = model.toString()
+    override fun ViewBinding.onBindItem(item: UI, position: Int) {
+        if (this is ItemHomeBinding) {
+            itemHomeLabel.text = item.toString()
+        }
     }
+
 }

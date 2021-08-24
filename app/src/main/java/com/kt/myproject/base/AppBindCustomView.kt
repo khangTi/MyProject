@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewbinding.ViewBinding
 import com.kt.myproject.R
 import com.kt.myproject.app.app
+import com.kt.myproject.ex.Inflate
 
 abstract class AppBindCustomView<VB : ViewBinding>(
     context: Context,

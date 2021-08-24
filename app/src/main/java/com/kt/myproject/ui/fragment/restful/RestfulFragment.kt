@@ -3,8 +3,8 @@ package com.kt.myproject.ui.fragment.restful
 import androidx.fragment.app.viewModels
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.databinding.RestfulBinding
-import com.kt.myproject.ui.adapter.RestfulAdapter
 import com.kt.myproject.ex.toast
+import com.kt.myproject.ui.adapter.RestfulAdapter
 
 class RestfulFragment : BaseFragment<RestfulBinding>(RestfulBinding::inflate) {
 
@@ -19,7 +19,7 @@ class RestfulFragment : BaseFragment<RestfulBinding>(RestfulBinding::inflate) {
 
     override fun onLiveDataObserve() {
         viewModel.userLiveData.obsever {
-            adapter.set(it.listUser)
+            adapter.set(it)
             adapter.notifyDataSetChanged()
         }
         viewModel.userError.obsever {

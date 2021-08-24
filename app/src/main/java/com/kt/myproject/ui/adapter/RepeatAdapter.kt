@@ -1,13 +1,11 @@
 package com.kt.myproject.ui.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.kt.myproject.base.BaseRecyclerAdapterBinding
+import androidx.viewbinding.ViewBinding
+import com.kt.myproject.base.BaseListAdapter
 import com.kt.myproject.databinding.ItemRepeatBinding
-import com.kt.myproject.repository.model.RepeatData
+import com.kt.myproject.ex.ItemInflating
 import com.kt.myproject.ex.load
+import com.kt.myproject.repository.model.RepeatData
 
 /**
  * -------------------------------------------------------------------------------------------------
@@ -17,16 +15,18 @@ import com.kt.myproject.ex.load
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class RepeatAdapter : BaseRecyclerAdapterBinding<RepeatData, ItemRepeatBinding>() {
+class RepeatAdapter : BaseListAdapter<RepeatData>(RepeatData.itemDiffer) {
 
-    override fun getBinding(context: Context, parent: ViewGroup): ItemRepeatBinding {
-        return ItemRepeatBinding.inflate(LayoutInflater.from(context), parent, false)
+    override fun itemInflating(item: RepeatData, position: Int): ItemInflating {
+        return ItemRepeatBinding::inflate
     }
 
-    override fun View.onBindModel(model: RepeatData, position: Int, view: ItemRepeatBinding) {
-        view.itemRepeatImage.load(model.image)
-        view.itemRepeatTitle.text = model.actor
-        view.itemRepeatContent.text = model.date
+    override fun ViewBinding.onBindItem(item: RepeatData, position: Int) {
+        if (this is ItemRepeatBinding) {
+            itemRepeatImage.load(item.image)
+            itemRepeatTitle.text = item.actor
+            itemRepeatContent.text = item.date
+        }
     }
 
 }

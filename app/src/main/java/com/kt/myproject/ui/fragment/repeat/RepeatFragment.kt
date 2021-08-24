@@ -23,7 +23,6 @@ class RepeatFragment : BaseFragment<RepeatBinding>(RepeatBinding::inflate) {
     override fun onLiveDataObserve() {
         viewModel.listLiveData.obsever {
             adapter.set(it)
-            adapter.notifyDataSetChanged()
             binding.repeatRecycler.smoothScrollToPosition(it.size)
         }
     }

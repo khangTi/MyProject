@@ -9,10 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.kt.myproject.ex.Inflate
 import com.kt.myproject.ui.activity.MainActivity
 import com.kt.myproject.utils.Logger
-
-typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
 abstract class BaseFragment<VB : ViewBinding>(val inflate: Inflate<VB>) : Fragment(), BaseView {
 

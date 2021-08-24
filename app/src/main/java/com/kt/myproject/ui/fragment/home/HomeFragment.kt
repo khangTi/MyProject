@@ -20,7 +20,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
     private fun setupAdapter() {
         adapter.set(list)
         adapter.bind(binding.homeRecyclerView)
-        adapter.onItemClick { s, _ -> navigationUI(s) }
+        adapter.onItemClick = { s, _ -> navigationUI(s) }
     }
 
     private fun navigationUI(s: UI) {

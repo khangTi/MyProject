@@ -1,13 +1,11 @@
 package com.kt.myproject.ui.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.kt.myproject.base.BaseRecyclerAdapterBinding
+import androidx.viewbinding.ViewBinding
+import com.kt.myproject.base.BaseBindRecyclerView
 import com.kt.myproject.databinding.ItemRepeatBinding
-import com.kt.myproject.repository.model.User
+import com.kt.myproject.ex.ItemInflating
 import com.kt.myproject.ex.load
+import com.kt.myproject.repository.model.User
 
 /**
  * -------------------------------------------------------------------------------------------------
@@ -17,15 +15,17 @@ import com.kt.myproject.ex.load
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class RestfulAdapter : BaseRecyclerAdapterBinding<User, ItemRepeatBinding>() {
+class RestfulAdapter : BaseBindRecyclerView<User>() {
 
-    override fun getBinding(context: Context, parent: ViewGroup): ItemRepeatBinding {
-        return ItemRepeatBinding.inflate(LayoutInflater.from(context), parent, false)
+    override fun itemInflating(item: User, position: Int): ItemInflating {
+        return ItemRepeatBinding::inflate
     }
 
-    override fun View.onBindModel(model: User, position: Int, view: ItemRepeatBinding) {
-        view.itemRepeatImage.load(model.avatar)
-        view.itemRepeatTitle.text = model.name
-        view.itemRepeatContent.text = model.email
+    override fun ViewBinding.onBindItem(item: User, position: Int) {
+        if (this is ItemRepeatBinding) {
+            itemRepeatTitle.text = item.name
+            itemRepeatContent.text = item.email
+        }
     }
+
 }
