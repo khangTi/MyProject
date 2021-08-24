@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.kt.myproject.ex.Inflate
+import com.kt.myproject.ui.activity.MainActivity
 import com.kt.myproject.utils.Logger
 
 abstract class BaseFragment<VB : ViewBinding>(val inflate: Inflate<VB>) : Fragment(), BaseView {

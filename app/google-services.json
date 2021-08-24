@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917917094566",
+    "project_id": "rtcweb-b5735",
+    "storage_bucket": "rtcweb-b5735.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917917094566:android:0ba642a9d90df992835a67",
+        "android_client_info": {
+          "package_name": "com.kti.myproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917917094566-9nuhrksk52eg4b0lndct7s62fnrdj6j6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwDJ8Nu5dOg2UzuRYGwHZFtlyPi4V8XPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917917094566-9nuhrksk52eg4b0lndct7s62fnrdj6j6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
