@@ -28,4 +28,6 @@ object NavigationId {
 
     val gallery = NavigationDirections.actionGlobalGalleryFragment()
 
+    val realtime = NavigationDirections.actionGlobalRealtimeFragment()
+
 }

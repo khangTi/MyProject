@@ -3,6 +3,7 @@ package com.kt.myproject.ex
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import androidx.constraintlayout.motion.widget.MotionLayout
 
 interface SimpleTextWatcher : TextWatcher {
 
@@ -23,4 +24,18 @@ interface SimpleTextWatcher : TextWatcher {
 
     fun textChange(string: String) {}
 
+}
+
+interface SimpleMotionTransitionListener : MotionLayout.TransitionListener {
+    override fun onTransitionChange(layout: MotionLayout?, startId: Int, endId: Int, progress: Float) {
+    }
+
+    override fun onTransitionStarted(layout: MotionLayout?, startId: Int, endId: Int) {
+    }
+
+    override fun onTransitionCompleted(layout: MotionLayout?, currentId: Int) {
+    }
+
+    override fun onTransitionTrigger(layout: MotionLayout?, triggerId: Int, positive: Boolean, progress: Float) {
+    }
 }

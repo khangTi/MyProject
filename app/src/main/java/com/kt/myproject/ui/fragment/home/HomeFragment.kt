@@ -26,13 +26,14 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
 
     private fun navigationUI(s: UI) {
         when (s) {
-            UI.BASIC_COROUTINE -> navigate(NavigationId.repeat)
-            UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
-            UI.NOTIFY_LIST -> navigate(NavigationId.notification)
             UI.ADV -> navigate(NavigationId.adv)
-            UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
             UI.GALLERY -> navigate(NavigationId.gallery)
             UI.CALL -> startClear(CallActivity::class.java)
+            UI.BASIC_COROUTINE -> navigate(NavigationId.repeat)
+            UI.NOTIFY_LIST -> navigate(NavigationId.notification)
+            UI.REALTIME_FIREBASE -> navigate(NavigationId.realtime)
+            UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
+            UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
         }
     }
 

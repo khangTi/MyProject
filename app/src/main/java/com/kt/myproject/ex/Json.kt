@@ -5,6 +5,7 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
+import com.kt.myproject.repository.model.RealtimeData
 import java.io.StringReader
 import java.math.BigDecimal
 
@@ -75,9 +76,9 @@ fun <T> String?.parse(cls: Class<Array<T>>): List<T>? {
     }
 }
 
-fun readObject(fileName: String): JsonObject? {
-    return fileName.readAsset().parse(JsonObject::class.java)
-}
+/*fun readObject(fileName: String): JsonObject? {
+    return readAsset(fileName).parse(JsonObject::class.java)
+}*/
 
 fun JsonElement?.toObject(): JsonObject? {
     this ?: return null

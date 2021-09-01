@@ -77,4 +77,13 @@
         android:id="@+id/action_global_galleryFragment"
         app:destination="@id/galleryFragment" />
 
+    <fragment
+        android:id="@+id/realtimeFragment"
+        android:name="com.kt.myproject.ui.fragment.firebase.RealtimeFragment"
+        android:label="fragment_realtime"
+        tools:layout="@layout/fragment_realtime" />
+    <action
+        android:id="@+id/action_global_realtimeFragment"
+        app:destination="@id/realtimeFragment" />
+
 </navigation>
