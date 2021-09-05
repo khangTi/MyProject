@@ -32,4 +32,6 @@ object NavigationId {
 
     val swipe = NavigationDirections.actionGlobalSwipeFragment()
 
+    val bottom = NavigationDirections.actionGlobalBottomSheetFragment()
+
 }

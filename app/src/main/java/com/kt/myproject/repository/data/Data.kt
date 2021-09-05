@@ -17,7 +17,8 @@ val list = listOf(
     UI.GALLERY,
     UI.CALL,
     UI.REALTIME_FIREBASE,
-    UI.SWIPE_RECYCLER
+    UI.SWIPE_RECYCLER,
+    UI.BOTTOM_SHEET
 )
 
 enum class UI {
@@ -29,5 +30,6 @@ enum class UI {
     GALLERY,
     CALL,
     REALTIME_FIREBASE,
-    SWIPE_RECYCLER
+    SWIPE_RECYCLER,
+    BOTTOM_SHEET
 }

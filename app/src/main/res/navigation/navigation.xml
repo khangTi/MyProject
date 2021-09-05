@@ -95,4 +95,13 @@
         android:id="@+id/action_global_swipeFragment"
         app:destination="@id/swipeFragment" />
 
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.kt.myproject.ui.fragment.bottomsheet.BottomSheetFragment"
+        android:label="bottom_sheet"
+        tools:layout="@layout/bottom_sheet" />
+    <action
+        android:id="@+id/action_global_bottomSheetFragment"
+        app:destination="@id/bottomSheetFragment" />
+
 </navigation>

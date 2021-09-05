@@ -14,4 +14,6 @@
 
     <string name="home_title">Home</string>
 
+    <string name="bottom_sheet_hi">Hi every one \n this is a bottom sheet dialog \n layout test</string>
+
 </resources>

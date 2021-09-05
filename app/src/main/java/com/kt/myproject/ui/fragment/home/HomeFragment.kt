@@ -29,12 +29,13 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.ADV -> navigate(NavigationId.adv)
             UI.GALLERY -> navigate(NavigationId.gallery)
             UI.CALL -> startClear(CallActivity::class.java)
+            UI.BOTTOM_SHEET -> navigate(NavigationId.bottom)
+            UI.SWIPE_RECYCLER -> navigate(NavigationId.swipe)
             UI.BASIC_COROUTINE -> navigate(NavigationId.repeat)
             UI.NOTIFY_LIST -> navigate(NavigationId.notification)
             UI.REALTIME_FIREBASE -> navigate(NavigationId.realtime)
             UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
             UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
-            UI.SWIPE_RECYCLER -> navigate(NavigationId.swipe)
         }
     }
 
