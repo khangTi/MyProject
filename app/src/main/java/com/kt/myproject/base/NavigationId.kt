@@ -30,4 +30,6 @@ object NavigationId {
 
     val realtime = NavigationDirections.actionGlobalRealtimeFragment()
 
+    val swipe = NavigationDirections.actionGlobalSwipeFragment()
+
 }

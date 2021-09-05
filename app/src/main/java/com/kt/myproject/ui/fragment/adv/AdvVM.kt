@@ -1,9 +1,9 @@
 package com.kt.myproject.ui.fragment.adv
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kt.myproject.R
+import com.kt.myproject.base.BaseViewModel
 import com.kt.myproject.base.EventLiveData
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class AdvVM : ViewModel() {
+class AdvVM : BaseViewModel() {
 
     val imagesLiveData = MutableLiveData<List<AdvItem>>()
 

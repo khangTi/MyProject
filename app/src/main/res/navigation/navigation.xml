@@ -86,4 +86,13 @@
         android:id="@+id/action_global_realtimeFragment"
         app:destination="@id/realtimeFragment" />
 
+    <dialog
+        android:id="@+id/swipeFragment"
+        android:name="com.kt.myproject.ui.fragment.swipe.SwipeFragment"
+        android:label="fragment_swipe"
+        tools:layout="@layout/fragment_swipe" />
+    <action
+        android:id="@+id/action_global_swipeFragment"
+        app:destination="@id/swipeFragment" />
+
 </navigation>

@@ -2,8 +2,8 @@ package com.kt.myproject.ui.fragment.restful
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kt.myproject.base.BaseViewModel
 import com.kt.myproject.repository.UserRepository
 import com.kt.myproject.repository.model.User
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class RestfulVM : ViewModel() {
+class RestfulVM : BaseViewModel() {
 
     val userLiveData = MutableLiveData<List<User>>()
 

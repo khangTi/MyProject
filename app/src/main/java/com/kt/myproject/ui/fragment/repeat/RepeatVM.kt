@@ -1,8 +1,8 @@
 package com.kt.myproject.ui.fragment.repeat
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kt.myproject.base.BaseViewModel
 import com.kt.myproject.repository.model.RepeatData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -17,7 +17,7 @@ import java.util.*
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class RepeatVM : ViewModel() {
+class RepeatVM : BaseViewModel() {
 
     init {
         repeatLog()

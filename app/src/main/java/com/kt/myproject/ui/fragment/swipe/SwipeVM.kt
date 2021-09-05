@@ -1,10 +1,10 @@
-package com.kt.myproject.ui.fragment.firebase
+package com.kt.myproject.ui.fragment.swipe
 
 import androidx.lifecycle.viewModelScope
 import com.kt.myproject.base.BaseViewModel
 import com.kt.myproject.base.EventLiveData
-import com.kt.myproject.repository.FirebaseRepository
-import com.kt.myproject.repository.model.RealtimeData
+import com.kt.myproject.repository.SampleRepository
+import com.kt.myproject.repository.data.CardItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
@@ -13,25 +13,21 @@ import kotlinx.coroutines.launch
 /**
  * -------------------------------------------------------------------------------------------------
  * @Project: no name
- * @Created: KOP 2021/08/27
+ * @Created: KOP 2021/09/01
  * @Description: ...
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-class RealtimeVM : BaseViewModel() {
+class SwipeVM : BaseViewModel() {
 
-    val realtimeFailedEvent = EventLiveData<String>()
+    val banksEvent = EventLiveData<List<CardItem>>()
 
-    val realtimeDataEvent = EventLiveData<RealtimeData>()
-
-    fun eventRealtime() {
+    fun fetchBanks() {
         viewModelScope.launch(Dispatchers.IO) {
-            FirebaseRepository.eventRealtime()
-                .catch { error ->
-                    realtimeFailedEvent.postValue(error.message)
-                }
+            SampleRepository.fetchBanks()
+                .catch { e -> log.d(e.message) }
                 .collect {
-                    realtimeDataEvent.postValue(it)
+                    banksEvent.postValue(it)
                 }
         }
     }

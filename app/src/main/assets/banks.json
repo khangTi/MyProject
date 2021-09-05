@@ -1,0 +1,464 @@
+[
+  {
+    "BankCode": "TPB",
+    "BankName": "Ngân hàng TMCP Tiên Phong",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#512879",
+      "#7B4FA4"
+    ],
+    "BankShortName": "TPBank",
+    "IsDisable": false
+  },
+  {
+    "BankCode": "CTG",
+    "BankName": "TMCP Công Thương Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0496D3",
+      "#0A588E"
+    ],
+    "BankShortName": "VietinBank",
+    "IsDisable": false
+  },
+  {
+    "BankCode": "VCB",
+    "BankName": "TMCP Ngoại thương Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0C6734",
+      "#6DB540"
+    ],
+    "BankShortName": "Vietcombank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VPB",
+    "BankName": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#018547",
+      "#01A558"
+    ],
+    "BankShortName": "VPBank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "OCB",
+    "BankName": "Ngân hàng TMCP Phương Đông",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#018D44",
+      "#0DB24A"
+    ],
+    "BankShortName": "OCB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VARB",
+    "BankName": "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#9F1637",
+      "#AE1C3F"
+    ],
+    "BankShortName": "AGRIBANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "DAB",
+    "BankName": "Ngân hàng TMCP Đông Á",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#2E368F",
+      "#138BE1"
+    ],
+    "BankShortName": "DongA Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "LPB",
+    "BankName": "Ngân hàng TMCP Bưu điện Liên Việt",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#DC5D09",
+      "#EF7626"
+    ],
+    "BankShortName": "LienVietPostBank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "STB",
+    "BankName": "Ngân hàng TMCP Sài Gòn Thương Tín",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#165FBF",
+      "#0C4DA2"
+    ],
+    "BankShortName": "Sacombank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "ABB",
+    "BankName": "Ngân hàng TMCP An Bình",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#01ABAE",
+      "#0BBDC0"
+    ],
+    "BankShortName": "ABBANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VCCB",
+    "BankName": "Ngân hàng TMCP Bản Việt",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#852130",
+      "#EB1B3A"
+    ],
+    "BankShortName": "Viet Capital Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "SHB",
+    "BankName": "Ngân hàng TMCP Sài Gòn - Hà Nội",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#F58220",
+      "#FF9C48"
+    ],
+    "BankShortName": "SHB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "HDB",
+    "BankName": "Ngân Hàng TMCP Phát Triển TPHCM",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#FFC225",
+      "#C9252C"
+    ],
+    "BankShortName": "HDBank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "OJB",
+    "BankName": "Thương mại TMCP Đại Dương",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#70C4D5",
+      "#1C87C5"
+    ],
+    "BankShortName": "OCEAN BANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "SEAB",
+    "BankName": "Ngân hàng TMCP Đông Nam Á",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#FF5C52",
+      "#C4261C"
+    ],
+    "BankShortName": "SeABank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "TCB",
+    "BankName": "Ngân hàng TMCP Kỹ Thương Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#EB2225",
+      "#D3181B"
+    ],
+    "BankShortName": "Techcombank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VIB",
+    "BankName": "Ngân hàng TMCP Quốc Tế",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#F1AD1D",
+      "#E47125"
+    ],
+    "BankShortName": "VIB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "ACB",
+    "BankName": "Ngân hàng TMCP Á Châu",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#20419A",
+      "#00AEEF"
+    ],
+    "BankShortName": "ACB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "NAB",
+    "BankName": "Ngân hàng TMCP Nam Á",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#E3C600",
+      "#FEDD00"
+    ],
+    "BankShortName": "Nam A Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "SVB",
+    "BankName": "Ngân hàng TNHH MTV Shinhan (Việt Nam)",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0166B3",
+      "#01B3EA"
+    ],
+    "BankShortName": "Shinhan Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "PBVN",
+    "BankName": "Ngân hàng TNHH MTV Public Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#D21118",
+      "#ED1C24"
+    ],
+    "BankShortName": "Public Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "BIDV",
+    "BankName": "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0F3495",
+      "#2E57C7"
+    ],
+    "BankShortName": "BIDV",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VRB",
+    "BankName": "Ngân hàng Liên doanh Việt - Nga",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#EC2227",
+      "#CB0005"
+    ],
+    "BankShortName": "VRB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "CIM",
+    "BankName": "TNHH Một Thành Viên CIMB Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#EC2227",
+      "#CB0005"
+    ],
+    "BankShortName": "CIMB BANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "PGB",
+    "BankName": "Ngân hàng TMCP MTV Xăng dầu Petrolimex",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#F15E23",
+      "#FEB342"
+    ],
+    "BankShortName": "PG Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "EIB",
+    "BankName": "Ngân hàng TMCP Xuất Nhập khẩu Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#004F8D",
+      "#0097E9"
+    ],
+    "BankShortName": "EXIMBANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "HOL",
+    "BankName": "TNHH Một Thành Viên Hong Leong Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#17388C",
+      "#C70038"
+    ],
+    "BankShortName": "Hong Leong Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "SGB",
+    "BankName": "Ngân hàng Sài Gòn Công Thương",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0761B0",
+      "#319CEE"
+    ],
+    "BankShortName": "SAIGON BANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "KLB",
+    "BankName": "Ngân hàng TMCP Kiên Long",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#07545C",
+      "#0E919E"
+    ],
+    "BankShortName": "Kienlongbank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "PVCB",
+    "BankName": "Ngân hàng TMCP Đại Chúng Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#FFB629",
+      "#FCD030"
+    ],
+    "BankShortName": "PVcomBank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "MB",
+    "BankName": "Ngân hàng TMCP Quân đội",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#141ED2",
+      "#1351A0"
+    ],
+    "BankShortName": "MB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "BVB",
+    "BankName": "Ngân hàng TMCP Bảo Việt",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#BB8D0B",
+      "#FFCA36"
+    ],
+    "BankShortName": "BAOVIET Bank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "GPB",
+    "BankName": "Ngân hàng TNHH MTV Dầu Khí Toàn Cầu",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#114C8D",
+      "#1471D8"
+    ],
+    "BankShortName": "GPBANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "COP",
+    "BankName": "Ngân hàng Hợp tác xã Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#00459A",
+      "#1471D8"
+    ],
+    "BankShortName": "CoopBank",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "IVB",
+    "BankName": "Ngân hàng TNHH Indovina",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0079CE",
+      "#0A70B8"
+    ],
+    "BankShortName": "IVB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "NVB",
+    "BankName": "Ngân hàng TMCP Quốc dân",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#0C5EAC",
+      "#19244E"
+    ],
+    "BankShortName": "NCB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "WOO",
+    "BankName": "Ngân hàng TNHH Woori Việt Nam",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#027DBF",
+      "#01ADF1"
+    ],
+    "BankShortName": "WOORI BANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VAB",
+    "BankName": "Ngân hàng TMCP Việt Á",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#144083",
+      "#2454AE"
+    ],
+    "BankShortName": "VIET A BANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "SCB",
+    "BankName": "Ngân hàng TMCP Sài gòn",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#112BA3",
+      "#1B6AC9"
+    ],
+    "BankShortName": "SCB",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "NASB",
+    "BankName": "Ngân hàng TMCP Bắc Á",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#C08C34",
+      "#E1AD3B"
+    ],
+    "BankShortName": "BAC A BANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "VBB",
+    "BankName": "Ngân hàng TMCP Việt Nam Thương Tín",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#054279",
+      "#046BC9"
+    ],
+    "BankShortName": "VIETBANK",
+    "IsDisable": true
+  },
+  {
+    "BankCode": "UOB",
+    "BankName": "Ngân hàng TNHH MTV United Overseas Bank (Việt Nam)",
+    "Descriptions": "",
+    "BackgroundColors": [
+      "#011094",
+      "#011094"
+    ],
+    "BankShortName": "UOB",
+    "IsDisable": true
+  }
+]

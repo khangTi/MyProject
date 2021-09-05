@@ -34,6 +34,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.REALTIME_FIREBASE -> navigate(NavigationId.realtime)
             UI.RETROFIT_COROUTINE -> navigate(NavigationId.restful)
             UI.PREFERENCES_DATA_STORE -> navigate(NavigationId.preferences)
+            UI.SWIPE_RECYCLER -> navigate(NavigationId.swipe)
         }
     }
 
