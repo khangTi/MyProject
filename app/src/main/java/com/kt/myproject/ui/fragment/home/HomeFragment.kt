@@ -28,6 +28,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
         when (s) {
             UI.ADV -> navigate(NavigationId.adv)
             UI.GALLERY -> navigate(NavigationId.gallery)
+            UI.CUSTOM_IMAGE -> navigate(NavigationId.image)
             UI.CALL -> startClear(CallActivity::class.java)
             UI.BOTTOM_SHEET -> navigate(NavigationId.bottom)
             UI.SWIPE_RECYCLER -> navigate(NavigationId.swipe)

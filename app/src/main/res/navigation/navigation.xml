@@ -104,4 +104,13 @@
         android:id="@+id/action_global_bottomSheetFragment"
         app:destination="@id/bottomSheetFragment" />
 
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.kt.myproject.ui.fragment.member.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <action
+        android:id="@+id/action_global_imageFragment"
+        app:destination="@id/imageFragment" />
+
 </navigation>

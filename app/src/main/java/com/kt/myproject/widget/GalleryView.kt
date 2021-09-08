@@ -25,7 +25,6 @@ class GalleryView(context: Context, attrs: AttributeSet?) :
     private val adapter = AdapterGallery()
 
     override fun onViewInit(context: Context, types: TypedArray) {
-
     }
 
     fun bindAdapterView() {

@@ -34,4 +34,6 @@ object NavigationId {
 
     val bottom = NavigationDirections.actionGlobalBottomSheetFragment()
 
+    val image = NavigationDirections.actionGlobalImageFragment()
+
 }
