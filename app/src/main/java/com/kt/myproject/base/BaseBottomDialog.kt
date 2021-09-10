@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
@@ -80,7 +79,7 @@ abstract class BaseBottomDialog<VB : ViewBinding>(val inflate: Inflate<VB>) : Bo
         val frameLayout = bottomSheetDialog.findViewById<FrameLayout>(R.id.design_bottom_sheet)
         val behavior = frameLayout?.let { BottomSheetBehavior.from(it) }
         frameLayout?.background =
-            ResourcesCompat.getDrawable(resources, R.drawable.bg_bottomsheet_dialog, null)
+            ResourcesCompat.getDrawable(resources, R.drawable.drw_bottomsheet, null)
         behavior?.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 

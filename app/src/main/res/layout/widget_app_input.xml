@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inputViewLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/motion_input">
+
+    <View
+        android:id="@+id/inputViewBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/drw_app_input_bg"
+        app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+        app:layout_constraintEnd_toEndOf="@id/inputEditText"
+        app:layout_constraintStart_toStartOf="@id/inputEditText"
+        app:layout_constraintTop_toTopOf="@id/inputEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/inputEditText"
+        style="@style/EditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/drw_app_input_border"
+        android:paddingStart="@dimen/padding15"
+        android:paddingEnd="@dimen/padding15"
+        android:textColor="@color/colorTextPrimary"
+        android:textColorHint="#BEBEBE"
+        android:textSize="10sp"
+        android:tint="@color/colorInputUnfocused"
+        tools:text="text" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/inputImageViewIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:clickable="false"
+        android:src="@drawable/ic_camera"
+        android:tint="@color/colorInputUnfocused"
+        app:tint="@color/colorInputFocused" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewHint"
+        style="@style/TextView"
+        android:paddingStart="@dimen/padding5"
+        android:paddingEnd="@dimen/padding5"
+        android:textColor="@color/colorInputUnfocused"
+        android:textSize="10sp"
+        tools:text="Hint text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewError"
+        style="@style/TextView.Error"
+        android:layout_marginTop="2dp"
+        tools:text="Error text" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

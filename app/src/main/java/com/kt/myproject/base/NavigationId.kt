@@ -1,6 +1,7 @@
 package com.kt.myproject.base
 
 import com.kt.myproject.NavigationDirections
+import com.kt.myproject.ui.fragment.call.CallFragmentDirections
 
 /**
  * -------------------------------------------------------------------------------------------------
@@ -35,5 +36,10 @@ object NavigationId {
     val bottom = NavigationDirections.actionGlobalBottomSheetFragment()
 
     val image = NavigationDirections.actionGlobalImageFragment()
+
+    /**
+     * Call Directions
+     */
+    val call = CallFragmentDirections.actionGlobalCallFragment()
 
 }

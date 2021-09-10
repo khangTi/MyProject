@@ -9,13 +9,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun onViewCreated() {
+    override fun onViewCreated() {}
 
-    }
-
-    override fun onLiveDataObserve() {
-
-    }
-
+    override fun onLiveDataObserve() {}
 
 }

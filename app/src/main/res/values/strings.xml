@@ -16,4 +16,7 @@
 
     <string name="bottom_sheet_hi">Hi every one \n this is a bottom sheet dialog \n layout test</string>
 
+    <string name="connect_hint_id">Id Number</string>
+    <string name="connect_action">Connect</string>
+
 </resources>

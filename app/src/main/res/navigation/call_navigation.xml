@@ -14,4 +14,13 @@
         android:id="@+id/action_global_connectFragment"
         app:destination="@id/connectFragment" />
 
+    <fragment
+        android:id="@+id/callFragment"
+        android:name="com.kt.myproject.ui.fragment.call.CallFragment"
+        android:label="fragment_call"
+        tools:layout="@layout/fragment_call" />
+    <action
+        android:id="@+id/action_global_callFragment"
+        app:destination="@id/callFragment" />
+
 </navigation>

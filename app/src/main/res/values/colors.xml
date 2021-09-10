@@ -11,4 +11,11 @@
 
     <color name="yellow">#E39717</color>
     <color name="red">#DF2E2E</color>
+
+    <color name="colorInputDefault">#EDF6FF</color>
+    <color name="colorInputUnfocused">#ADADAD</color>
+    <color name="colorInputFocused">#419DF2</color>
+    <color name="colorInputError">#F24141</color>
+    <color name="colorTextPrimary">#232323</color>
+
 </resources>
