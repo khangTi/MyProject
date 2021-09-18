@@ -10,12 +10,12 @@ class ConnectFragment : BaseFragment<FragmentConnectBinding>(FragmentConnectBind
     private val vm by lazy { activityVM(CallVM::class) }
 
     override fun onViewCreated() {
-        binding.connectAction.actionClickListener { handleClick() }
+        binding.connectAction.actionClickListener { checkPermissionAndRequest() }
     }
 
     override fun onLiveDataObserve() {}
 
-    private fun handleClick() {
+    override fun onPermissionGranted(granted: String) {
         vm.idCallSingle.postValue(binding.connectAppInput.text.toString())
         navigate(NavigationId.call)
     }
