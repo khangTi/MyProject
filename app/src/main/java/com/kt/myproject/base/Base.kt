@@ -129,8 +129,7 @@ open class EventLiveData<T> : MediatorLiveData<T>() {
 
     override fun removeObserver(observer: Observer<in T>) {
         observers.forEach {
-            @Suppress("TYPE_INFERENCE_ONLY_INPUT_TYPES_WARNING")
-            if (it.value.remove(observer)) {
+            if (it.value.remove(observer as Observer<T>)) {
                 if (it.value.isEmpty()) {
                     observers.remove(it.key)
                 }
@@ -207,8 +206,7 @@ open class SingleLiveData<T> : MediatorLiveData<T>() {
 
     override fun removeObserver(observer: Observer<in T>) {
         observers.forEach {
-            @Suppress("TYPE_INFERENCE_ONLY_INPUT_TYPES_WARNING")
-            if (it.value.remove(observer)) {
+            if (it.value.remove(observer as Observer<T>)) {
                 if (it.value.isEmpty()) {
                     observers.remove(it.key)
                 }
@@ -252,7 +250,6 @@ open class SingleLiveData<T> : MediatorLiveData<T>() {
             pending.set(true)
         }
     }
-
 }
 
 /**

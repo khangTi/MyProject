@@ -39,11 +39,11 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
 
     override fun onViewInit(context: Context, types: TypedArray) {
         hint = types.hint
-        bd.inputEditText.setText(types.text)
-        bd.inputEditText.addTextChangedListener(this)
-        onIconInitialize(bd.inputImageViewIcon, types)
-        onEditTextInitialize(bd.inputEditText, types)
-        bd.inputViewLayout.addTransitionListener(this)
+        binding.inputEditText.setText(types.text)
+        binding.inputEditText.addTextChangedListener(this)
+        onIconInitialize(binding.inputImageViewIcon, types)
+        onEditTextInitialize(binding.inputEditText, types)
+        binding.inputViewLayout.addTransitionListener(this)
     }
 
     private fun onIconInitialize(it: AppCompatImageView, types: TypedArray) {
@@ -114,8 +114,8 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
     }
 
     override fun requestFocus(direction: Int, previouslyFocusedRect: Rect?): Boolean {
-        if (!bd.inputEditText.hasFocus()) {
-            bd.inputEditText.requestFocus(FOCUS_DOWN)
+        if (!binding.inputEditText.hasFocus()) {
+            binding.inputEditText.requestFocus(FOCUS_DOWN)
         }
         return false
     }
@@ -124,15 +124,15 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
         super.setOnClickListener(listener)
         if (null == listener) {
             enableFocus()
-            bd.inputTextViewHint.setOnClickListener(null)
-            bd.inputEditText.setOnClickListener(null)
+            binding.inputTextViewHint.setOnClickListener(null)
+            binding.inputEditText.setOnClickListener(null)
         } else {
             disableFocus()
             val onClick = OnClickListener {
                 listener?.onClick(this@AppInputView)
             }
-            bd.inputTextViewHint.addViewClickListener(onClick)
-            bd.inputEditText.addViewClickListener(onClick)
+            binding.inputTextViewHint.addViewClickListener(onClick)
+            binding.inputEditText.addViewClickListener(onClick)
         }
     }
 
@@ -146,14 +146,14 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
 
     override fun onTransitionCompleted(layout: MotionLayout?, currentId: Int) {
         when (currentId) {
-            R.id.focused -> bd.inputTextViewHint.setBackgroundResource(R.color.white)
+            R.id.focused -> binding.inputTextViewHint.setBackgroundResource(R.color.white)
             R.id.unfocused -> {
             }
         }
     }
 
     override fun onDetachedFromWindow() {
-        bd.inputViewLayout.clearAnimation()
+        binding.inputViewLayout.clearAnimation()
         onFocusChange.clear()
         super.onDetachedFromWindow()
     }
@@ -164,12 +164,12 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
 //    }
 
     override fun hasFocus(): Boolean {
-        return bd.inputEditText.hasFocus()
+        return binding.inputEditText.hasFocus()
     }
 
     override fun clearFocus() {
         super.clearFocus()
-        bd.inputEditText.clearFocus()
+        binding.inputEditText.clearFocus()
     }
 
     /**
@@ -179,18 +179,18 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
         onFocusChange.forEach { it.onFocusChange(this, hasFocus) }
         when {
             hasFocus -> {
-                bd.inputViewLayout.transitionToState(R.id.focused)
+                binding.inputViewLayout.transitionToState(R.id.focused)
                 drawBackground(0)
                 drawBorder(R.color.colorInputFocused)
             }
             !hasFocus && text.isNullOrEmpty() -> {
                 clearBorder()
-                bd.inputViewLayout.transitionToState(R.id.unfocused)
+                binding.inputViewLayout.transitionToState(R.id.unfocused)
             }
             !hasFocus && !text.isNullOrEmpty() -> {
                 drawBackground(0)
                 drawBorder(R.color.colorInputUnfocused)
-                bd.inputViewLayout.transitionToState(R.id.focused)
+                binding.inputViewLayout.transitionToState(R.id.focused)
             }
         }
     }
@@ -217,9 +217,9 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
     var isSilent: Boolean = false
 
     var hint: String?
-        get() = bd.inputTextViewHint.text?.toString()
+        get() = binding.inputTextViewHint.text?.toString()
         set(value) {
-            bd.inputTextViewHint.text = value
+            binding.inputTextViewHint.text = value
         }
 
     val trimText: String?
@@ -228,27 +228,27 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
     var text: String?
         get() {
             val s =
-                bd.inputEditText.text?.toString()?.trimIndent()?.trim()?.replace("\\s+".toRegex(), " ")
+                binding.inputEditText.text?.toString()?.trimIndent()?.trim()?.replace("\\s+".toRegex(), " ")
             isSilent = true
-            bd.inputEditText.setText(s)
+            binding.inputEditText.setText(s)
             if (hasFocus()) {
-                bd.inputEditText.setSelection(s?.length ?: 0)
+                binding.inputEditText.setSelection(s?.length ?: 0)
             }
             isSilent = false
             return s
         }
         set(value) {
             isSilent = true
-            bd.inputEditText.setText(value)
+            binding.inputEditText.setText(value)
             error = null
             onFocusChange(null, isFocused)
             isSilent = false
         }
 
     var error: String?
-        get() = bd.inputTextViewError.text?.toString()
+        get() = binding.inputTextViewError.text?.toString()
         set(value) {
-            bd.inputTextViewError.text = value
+            binding.inputTextViewError.text = value
             if (error != null) {
                 drawBorder(R.color.colorInputError)
             }
@@ -260,8 +260,8 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
     var src: Int = 0
         set(value) {
             val isGone = value <= 0
-            bd.inputImageViewIcon.isGone(isGone)
-            bd.inputImageViewIcon.setImageResource(value)
+            binding.inputImageViewIcon.isGone(isGone)
+            binding.inputImageViewIcon.setImageResource(value)
         }
 
     val isTextEmpty: Boolean get() = text.isNullOrEmpty()
@@ -269,43 +269,43 @@ class AppInputView(context: Context, attrs: AttributeSet?) :
     val hasError: Boolean get() = !error.isNullOrEmpty()
 
     fun addActionNextListener(block: (String?) -> Unit) {
-        bd.inputEditText.addActionNextListener(block)
+        binding.inputEditText.addActionNextListener(block)
     }
 
     fun disableFocus() {
-        bd.inputEditText.apply {
+        binding.inputEditText.apply {
             isFocusable = false
             isCursorVisible = false
         }
     }
 
     fun enableFocus() {
-        bd.inputEditText.apply {
+        binding.inputEditText.apply {
             isFocusable = true
             isCursorVisible = true
         }
     }
 
     private fun drawBackground(@DrawableRes res: Int) {
-        bd.inputViewBackground.setBackgroundResource(res)
+        binding.inputViewBackground.setBackgroundResource(res)
     }
 
     fun drawBorder(@ColorRes res: Int) {
         if (!text.isNullOrEmpty() || hasFocus()) {
-            bd.inputTextViewHint.textColor(res)
+            binding.inputTextViewHint.textColor(res)
         }
-        bd.inputEditText.backgroundTintRes(res)
+        binding.inputEditText.backgroundTintRes(res)
     }
 
     private fun clearBorder() {
-        bd.inputTextViewHint.textColor(R.color.colorInputUnfocused)
-        bd.inputEditText.backgroundTintRes(R.color.colorInputDefault)
+        binding.inputTextViewHint.textColor(R.color.colorInputUnfocused)
+        binding.inputEditText.backgroundTintRes(R.color.colorInputDefault)
         drawBackground(R.drawable.drw_app_input_bg)
-        bd.inputTextViewHint.background = null
+        binding.inputTextViewHint.background = null
     }
 
     fun clear() {
-        bd.inputEditText.text = null
+        binding.inputEditText.text = null
         error = null
         clearBorder()
     }

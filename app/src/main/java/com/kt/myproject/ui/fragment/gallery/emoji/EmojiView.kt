@@ -13,9 +13,9 @@ class EmojiView(context: Context, attrs: AttributeSet) :
     InputAwareLayout.InputView {
 
     override fun onViewInit(context: Context, types: TypedArray) {
-        bd.emojiViewEmoji.setOnClickListener { toast("emoji") }
-        bd.emojiViewSticker.setOnClickListener { toast("sticker") }
-        bd.emojiViewGif.setOnClickListener { toast("gif") }
+        binding.emojiViewEmoji.setOnClickListener { toast("emoji") }
+        binding.emojiViewSticker.setOnClickListener { toast("sticker") }
+        binding.emojiViewGif.setOnClickListener { toast("gif") }
     }
 
     override fun show(height: Int, immediate: Boolean) {

@@ -13,14 +13,14 @@ class HeaderView(context: Context, attributeSet: AttributeSet) :
     AppBindCustomView<HeaderViewBinding>(context, attributeSet, HeaderViewBinding::inflate) {
 
     override fun onViewInit(context: Context, types: TypedArray) {
-        bd.headerTitle.text = types.title
+        binding.headerTitle.text = types.title
 
         if (types.hideAction) {
-            bd.headerAction.hide()
-            bd.headerTitle.gravity = Gravity.LEFT
+            binding.headerAction.hide()
+            binding.headerTitle.gravity = Gravity.LEFT
         } else {
-            bd.headerAction.show()
-            bd.headerTitle.gravity = Gravity.CENTER
+            binding.headerAction.show()
+            binding.headerTitle.gravity = Gravity.CENTER
         }
     }
 

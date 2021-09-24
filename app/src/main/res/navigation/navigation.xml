@@ -113,4 +113,29 @@
         android:id="@+id/action_global_imageFragment"
         app:destination="@id/imageFragment" />
 
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.kt.myproject.ui.fragment.camera.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <action
+        android:id="@+id/action_global_cameraFragment"
+        app:destination="@id/cameraFragment" />
+
+    <fragment
+        android:id="@+id/maskFaceFragment"
+        android:name="com.kt.myproject.ui.fragment.camera.MaskFragment"
+        android:label="MaskFaceFragment" />
+    <action
+        android:id="@+id/action_global_maskFaceFragment"
+        app:destination="@id/maskFaceFragment" />
+
+    <fragment
+        android:id="@+id/mask2Fragment"
+        android:name="com.kt.myproject.ui.fragment.camera.Mask2Fragment"
+        android:label="Mask2Fragment" />
+    <action
+        android:id="@+id/action_global_mask2Fragment"
+        app:destination="@id/mask2Fragment" />
+
 </navigation>

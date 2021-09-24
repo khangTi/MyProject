@@ -27,6 +27,9 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
     private fun navigationUI(s: UI) {
         when (s) {
             UI.ADV -> navigate(NavigationId.adv)
+            UI.MASK -> navigate(NavigationId.mask)
+            UI.MASK2 -> navigate(NavigationId.mask2)
+            UI.CAMERA -> navigate(NavigationId.camera)
             UI.GALLERY -> navigate(NavigationId.gallery)
             UI.CUSTOM_IMAGE -> navigate(NavigationId.image)
             UI.CALL -> startClear(CallActivity::class.java)

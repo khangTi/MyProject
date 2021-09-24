@@ -20,11 +20,11 @@ class ButtonView(context: Context, attributeSet: AttributeSet) :
 
     override fun onViewInit(context: Context, types: TypedArray) {
         val text = types.text
-        bd.buttonAction.text = text
+        binding.buttonAction.text = text
     }
 
     fun actionClickListener(block: () -> Unit) {
-        bd.buttonAction.animClick {
+        binding.buttonAction.animClick {
             block()
         }
     }

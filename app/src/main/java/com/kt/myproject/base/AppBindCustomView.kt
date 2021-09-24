@@ -26,7 +26,7 @@ abstract class AppBindCustomView<VB : ViewBinding>(
     val inflate: Inflate<VB>
 ) : FrameLayout(context, attrs) {
 
-    var bd: VB
+    var binding: VB
 
     protected abstract fun onViewInit(context: Context, types: TypedArray)
 
@@ -37,7 +37,7 @@ abstract class AppBindCustomView<VB : ViewBinding>(
     init {
         val types = context.theme.obtainStyledAttributes(attrs, styleResource(), 0, 0)
         try {
-            bd = inflate.invoke(LayoutInflater.from(context), this, true)
+            binding = inflate.invoke(LayoutInflater.from(context), this, true)
             onViewInit(context, types)
         } finally {
 

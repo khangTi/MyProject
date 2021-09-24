@@ -37,6 +37,12 @@ object NavigationId {
 
     val image = NavigationDirections.actionGlobalImageFragment()
 
+    val camera = NavigationDirections.actionGlobalCameraFragment()
+
+    val mask = NavigationDirections.actionGlobalMaskFaceFragment()
+
+    val mask2 = NavigationDirections.actionGlobalMask2Fragment()
+
     /**
      * Call Directions
      */

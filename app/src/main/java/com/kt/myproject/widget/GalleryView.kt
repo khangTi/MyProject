@@ -36,7 +36,7 @@ class GalleryView(context: Context, attrs: AttributeSet?) :
             )
             launch(Dispatchers.Main) {
                 adapter.set(list)
-                adapter.bind(bd.galleryViewRecycler, 3)
+                adapter.bind(binding.galleryViewRecycler, 3)
             }
         }
     }

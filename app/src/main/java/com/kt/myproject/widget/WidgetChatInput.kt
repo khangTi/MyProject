@@ -26,44 +26,44 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
 
     var text: String
         get() {
-            val t = bd.chatInputInput.text.toString()
+            val t = binding.chatInputInput.text.toString()
             return if (t.isEmpty()) "\uD83D\uDC4D"/*like*/ else t
         }
         set(value) {
-            bd.chatInputInput.setText(value)
+            binding.chatInputInput.setText(value)
         }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewInit(context: Context, types: TypedArray) {
         setupStubGaller()
-        bd.chatInputInput.addTextChangedListener(this)
-        bd.chatInputAudio.setOnClickListener {
+        binding.chatInputInput.addTextChangedListener(this)
+        binding.chatInputAudio.setOnClickListener {
             listener?.onMicClick()
         }
-        bd.chatInputEmoji.setOnClickListener {
+        binding.chatInputEmoji.setOnClickListener {
             hideGallery()
-            bd.widgetInputGallery.show(bd.chatInputInput, bd.emojiView)
+            binding.widgetInputGallery.show(binding.chatInputInput, binding.emojiView)
             listener?.onEmojiClick()
         }
-        bd.chatInputSend.setOnClickListener {
+        binding.chatInputSend.setOnClickListener {
             listener?.onSendClick(text)
         }
-        bd.chatInputPhoto.setOnClickListener {
+        binding.chatInputPhoto.setOnClickListener {
             hideEmoji()
-            bd.widgetInputGallery.show(bd.chatInputInput, bd.chatInputStub)
-            bd.chatInputStub.bindAdapterView()
+            binding.widgetInputGallery.show(binding.chatInputInput, binding.chatInputStub)
+            binding.chatInputStub.bindAdapterView()
         }
-        bd.chatInputInput.setOnTouchListener { _, _ ->
+        binding.chatInputInput.setOnTouchListener { _, _ ->
             animViewFocus()
             false
         }
-        bd.chatInputInput.setOnFocusChangeListener { _, hasFocus ->
+        binding.chatInputInput.setOnFocusChangeListener { _, hasFocus ->
             when (hasFocus) {
                 true -> animViewFocus()
                 else -> animViewUnFocus()
             }
         }
-        bd.chatInputAdd.setOnClickListener {
+        binding.chatInputAdd.setOnClickListener {
             when (iconAdd) {
                 true -> listener?.onAddClick()
                 else -> animViewUnFocus()
@@ -72,20 +72,20 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
     }
 
     private fun setupStubGaller() {
-        bd.widgetInputGallery.setIsBubble(false)
-        bd.widgetInputGallery.addOnKeyboardShownListener(this)
-        bd.widgetInputGallery.hideAttachedInput(false)
-        bd.widgetInputGallery.show(bd.chatInputInput, bd.chatInputStub)
+        binding.widgetInputGallery.setIsBubble(false)
+        binding.widgetInputGallery.addOnKeyboardShownListener(this)
+        binding.widgetInputGallery.hideAttachedInput(false)
+        binding.widgetInputGallery.show(binding.chatInputInput, binding.chatInputStub)
         post(100) {
             hideEmoji()
-            bd.widgetInputGallery.hideAttachedInput(true)
+            binding.widgetInputGallery.hideAttachedInput(true)
         }
     }
 
     override fun afterTextChanged(s: Editable?) {
         when (s.toString().isEmpty()) {
-            true -> bd.chatInputSend.setImageResource(R.drawable.ic_like)
-            else -> bd.chatInputSend.setImageResource(R.drawable.ic_send)
+            true -> binding.chatInputSend.setImageResource(R.drawable.ic_like)
+            else -> binding.chatInputSend.setImageResource(R.drawable.ic_send)
         }
     }
 
@@ -96,24 +96,24 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
 
     private fun animViewFocus() {
         iconAdd = false
-        val view = bd.chatInputBg.id
-        val viewAdd = bd.chatInputAdd.id
-        ChangeBounds().apply { duration = 250 }.beginTransition(bd.chatInputParentView) {
-            this.clear(bd.chatInputBg.id, ConstraintSet.START)
+        val view = binding.chatInputBg.id
+        val viewAdd = binding.chatInputAdd.id
+        ChangeBounds().apply { duration = 250 }.beginTransition(binding.chatInputParentView) {
+            this.clear(binding.chatInputBg.id, ConstraintSet.START)
             connect(view, ConstraintSet.START, viewAdd, ConstraintSet.END)
         }
-        bd.chatInputAdd.setImageResource(R.drawable.ic_next)
+        binding.chatInputAdd.setImageResource(R.drawable.ic_next)
     }
 
     private fun animViewUnFocus() {
         iconAdd = true
-        val view = bd.chatInputBg.id
-        val viewAudio = bd.chatInputAudio.id
-        ChangeBounds().apply { duration = 250 }.beginTransition(bd.chatInputParentView) {
+        val view = binding.chatInputBg.id
+        val viewAudio = binding.chatInputAudio.id
+        ChangeBounds().apply { duration = 250 }.beginTransition(binding.chatInputParentView) {
             this.clear(view, ConstraintSet.START)
             connect(view, ConstraintSet.START, viewAudio, ConstraintSet.END)
         }
-        bd.chatInputAdd.setImageResource(R.drawable.ic_plus)
+        binding.chatInputAdd.setImageResource(R.drawable.ic_plus)
     }
 
     interface WidgetChatInputListener {
@@ -142,18 +142,18 @@ class WidgetChatInput(context: Context, attrs: AttributeSet?) :
     }
 
     override fun onKeyboardShown() {
-        bd.widgetInputGallery.hideAttachedInput(true)
+        binding.widgetInputGallery.hideAttachedInput(true)
     }
 
     private fun hideGallery() {
-        if (bd.chatInputStub.isShowing()) {
-            bd.chatInputStub.hide(true)
+        if (binding.chatInputStub.isShowing()) {
+            binding.chatInputStub.hide(true)
         }
     }
 
     private fun hideEmoji() {
-        if (bd.emojiView.isShowing()) {
-            bd.emojiView.hide(true)
+        if (binding.emojiView.isShowing()) {
+            binding.emojiView.hide(true)
         }
     }
 

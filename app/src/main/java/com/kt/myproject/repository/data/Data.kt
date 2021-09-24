@@ -9,8 +9,11 @@ package com.kt.myproject.repository.data
  * -------------------------------------------------------------------------------------------------
  */
 val list = listOf(
-    UI.ADV,
-    UI.CALL,
+    /*UI.ADV,
+    UI.CALL,*/
+    UI.MASK,
+    UI.MASK2
+    /*UI.CAMERA,
     UI.GALLERY,
     UI.NOTIFY_LIST,
     UI.BOTTOM_SHEET,
@@ -19,12 +22,15 @@ val list = listOf(
     UI.BASIC_COROUTINE,
     UI.REALTIME_FIREBASE,
     UI.RETROFIT_COROUTINE,
-    UI.PREFERENCES_DATA_STORE
+    UI.PREFERENCES_DATA_STORE*/
 )
 
 enum class UI {
     ADV,
     CALL,
+    MASK,
+    MASK2,
+    CAMERA,
     GALLERY,
     NOTIFY_LIST,
     BOTTOM_SHEET,
