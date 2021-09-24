@@ -32,11 +32,11 @@ class MaskFragment : BaseFragment<FragmentMaskBinding>(FragmentMaskBinding::infl
     /**
      * module mask
      */
-    override fun onFaceMask(bool: Boolean, confidence: Float) {
+    override fun onFaceMask(bool: Boolean, confidence: Float, time: Long) {
         job?.cancel()
         job = lifecycleScope.launch(Dispatchers.Main) {
             binding.maskLabelStatus.text =
-                if (bool) "face not mask $confidence" else "face mask $confidence"
+                if (bool) "face not mask $confidence - $time" else "face mask $confidence - $time"
         }
     }
 

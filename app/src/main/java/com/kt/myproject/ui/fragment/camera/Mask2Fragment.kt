@@ -1,5 +1,6 @@
 package com.kt.myproject.ui.fragment.camera
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.ml.vision.face.FirebaseVisionFace
 import com.kt.myproject.base.BaseFragment
@@ -35,9 +36,11 @@ class Mask2Fragment : BaseFragment<FragmentMaskBinding>(FragmentMaskBinding::inf
     /**
      * module detection
      */
+    @SuppressLint("SetTextI18n")
     override fun faceEligible(face: FirebaseVisionFace, dataFace: DataGetFacePoint) {
         if (processing) return
         processing = true
+        val time = System.currentTimeMillis()
         val bitmap = dataFace.fullFrame.toBitmap()?.let { cropBitmapWithRect(it, face.boundingBox) }
         var text = ""
         text = when (bitmap == null) {
@@ -49,7 +52,7 @@ class Mask2Fragment : BaseFragment<FragmentMaskBinding>(FragmentMaskBinding::inf
         }
         job?.cancel()
         job = lifecycleScope.launch(Dispatchers.Main) {
-            binding.maskLabelStatus.text = text
+            binding.maskLabelStatus.text = text + "${System.currentTimeMillis() - time}"
         }
         processing = false
     }

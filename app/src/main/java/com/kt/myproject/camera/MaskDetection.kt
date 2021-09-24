@@ -46,6 +46,7 @@ class MaskDetection(context: Context) {
     fun detectMask(fullFrame: ByteArray, face: FirebaseVisionFace) {
         if (processing) return
         processing = true
+        val time = System.currentTimeMillis()
         executorFaceDetect.submit {
             val bitmap = fullFrame.toBitmap()?.let { cropBitmapWithRect(it, face.boundingBox) }
             val scale = bitmap?.scale(TF_OD_API_INPUT_SIZE, TF_OD_API_INPUT_SIZE, true)
@@ -57,13 +58,14 @@ class MaskDetection(context: Context) {
                     moduleMask?.recognizeImage(scale)
                 val result = resultsAux?.firstOrNull()
                 log.d("${result?.confidence} ${result?.title}")
+                val timeCheck = System.currentTimeMillis() - time
                 if (result.checkTitleMaskFace()) {
                     bitmap.recycle()
                     scale.recycle()
-                    event?.onFaceMask(true, result?.confidence ?: 0f)
+                    event?.onFaceMask(true, result?.confidence ?: 0f, timeCheck)
                 } else {
                     log.d("face mask")
-                    event?.onFaceMask(false, result?.confidence ?: 0f)
+                    event?.onFaceMask(false, result?.confidence ?: 0f, timeCheck)
                 }
             }
             processing = false
@@ -76,7 +78,7 @@ class MaskDetection(context: Context) {
     }
 
     interface MaskEvent {
-        fun onFaceMask(bool: Boolean, confidence: Float)
+        fun onFaceMask(bool: Boolean, confidence: Float, time: Long)
     }
 
 }
