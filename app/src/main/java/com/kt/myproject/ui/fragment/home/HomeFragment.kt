@@ -29,6 +29,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.ADV -> navigate(NavigationId.adv)
             UI.MASK -> navigate(NavigationId.mask)
             UI.MASK2 -> navigate(NavigationId.mask2)
+            UI.RANGE -> navigate(NavigationId.range)
             UI.CAMERA -> navigate(NavigationId.camera)
             UI.GALLERY -> navigate(NavigationId.gallery)
             UI.CUSTOM_IMAGE -> navigate(NavigationId.image)

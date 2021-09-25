@@ -102,4 +102,13 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="RangeView">
+        <attr name="range_min" format="integer" />
+        <attr name="range_max" format="integer" />
+        <attr name="range_step" format="integer" />
+        <attr name="range_type" format="integer" />
+        <attr name="range_unit" format="string" />
+        <attr name="range_format" format="string" />
+    </declare-styleable>
+
 </resources>

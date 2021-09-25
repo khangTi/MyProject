@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widgetRange"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/padding22"
+    android:layout_marginEnd="@dimen/padding22"
+    app:motionDebug="SHOW_PROGRESS"
+    android:background="@drawable/drw_line"
+    android:padding="@dimen/padding22">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/rangeMotionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutDescription="@xml/motion_range_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/rangeBubbleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@mipmap/seekbar"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding22"
+            app:layout_constraintDimensionRatio="h,5:3"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rangeTextViewValue"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textColor="@color/teal_700"
+                tools:text="1" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/rangeViewRange"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/padding15"
+            android:background="@drawable/drw_rounded"
+            android:backgroundTint="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rangeBubbleValue" />
+
+        <View
+            android:id="@+id/rangeViewProgress"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/padding15"
+            android:background="@drawable/drw_rounded"
+            android:backgroundTint="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rangeBubbleValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rangeTextViewMin"
+            style="@style/TextView"
+            android:layout_marginTop="@dimen/padding22"
+            android:textColor="@color/colorInputUnfocused"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rangeViewRange"
+            app:layout_constraintTop_toBottomOf="@+id/rangeViewRange"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rangeTextViewMax"
+            style="@style/TextView"
+            android:textColor="@color/colorInputUnfocused"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rangeViewRange"
+            app:layout_constraintTop_toTopOf="@+id/rangeTextViewMin"
+            tools:text="100" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rangeViewKnob"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/range_knob"/>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

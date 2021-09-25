@@ -1,0 +1,76 @@
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:onTouchUp="stop"
+            motion:touchAnchorId="@id/rangeViewKnob"
+            motion:touchAnchorSide="right" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@id/rangeViewKnob"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+
+            <Layout
+                motion:layout_constraintBottom_toBottomOf="@id/rangeViewRange"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="@+id/rangeViewRange" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/rangeBubbleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="h,5:3">
+
+            <Layout
+                motion:layout_constraintBottom_toTopOf="@id/rangeViewKnob"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"/>
+
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/end"
+        motion:deriveConstraintsFrom="@id/start">
+
+        <Constraint
+            android:id="@id/rangeViewKnob"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+
+            <Layout
+                motion:layout_constraintBottom_toBottomOf="@id/rangeViewRange"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="@+id/rangeViewRange" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/rangeBubbleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="h,5:3">
+
+            <Layout
+                motion:layout_constraintBottom_toTopOf="@id/rangeViewKnob"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"/>
+
+        </Constraint>
+
+    </ConstraintSet>
+
+</MotionScene>

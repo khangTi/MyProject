@@ -43,6 +43,8 @@ object NavigationId {
 
     val mask2 = NavigationDirections.actionGlobalMask2Fragment()
 
+    val range = NavigationDirections.actionGlobalRangeFragment()
+
     /**
      * Call Directions
      */

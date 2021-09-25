@@ -138,4 +138,13 @@
         android:id="@+id/action_global_mask2Fragment"
         app:destination="@id/mask2Fragment" />
 
+    <fragment
+        android:id="@+id/rangeFragment"
+        android:name="com.kt.myproject.ui.fragment.range.RangeFragment"
+        android:label="RangeFragment"
+        tools:layout="@layout/fragment_range"/>
+    <action
+        android:id="@+id/action_global_rangeFragment"
+        app:destination="@id/rangeFragment" />
+
 </navigation>

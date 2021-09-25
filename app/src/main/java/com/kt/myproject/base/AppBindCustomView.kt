@@ -30,6 +30,8 @@ abstract class AppBindCustomView<VB : ViewBinding>(
 
     protected abstract fun onViewInit(context: Context, types: TypedArray)
 
+    open fun initAttrs(context: Context, types: AttributeSet?) {}
+
     protected open fun styleResource(): IntArray {
         return R.styleable.CustomView
     }
@@ -39,8 +41,8 @@ abstract class AppBindCustomView<VB : ViewBinding>(
         try {
             binding = inflate.invoke(LayoutInflater.from(context), this, true)
             onViewInit(context, types)
+            initAttrs(context, attrs)
         } finally {
-
             types.recycle()
         }
     }
