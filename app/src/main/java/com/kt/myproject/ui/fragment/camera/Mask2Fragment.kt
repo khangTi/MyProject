@@ -12,7 +12,7 @@ import com.kt.myproject.databinding.FragmentMaskBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import wee.digital.alfar.utils.camera.toBitmap
+import com.kt.myproject.camera.toBitmap
 
 class Mask2Fragment : BaseFragment<FragmentMaskBinding>(FragmentMaskBinding::inflate),
     DetectFace.DetectCallBack {

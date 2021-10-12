@@ -31,4 +31,16 @@
         app:riv_border_width="1px"
         app:riv_corner_radius="10dp" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cameraCapture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="@dimen/padding45"
+        android:background="@drawable/drw_rounded"
+        android:padding="@dimen/padding15"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

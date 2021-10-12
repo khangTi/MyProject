@@ -1,4 +1,4 @@
-package wee.digital.alfar.utils.camera
+package com.kt.myproject.camera
 
 import android.annotation.SuppressLint
 import android.graphics.*
@@ -22,9 +22,9 @@ import kotlin.math.min
 /**
  * config extension
  */
-const val WIDTH = 1280
+const val WIDTH = 640
 
-const val HEIGHT = 720
+const val HEIGHT = 480
 
 val SIZE = Size(WIDTH, HEIGHT)
 
@@ -188,6 +188,13 @@ fun Bitmap?.rotate(degrees: Int): Bitmap? {
     this ?: return null
     val matrix = Matrix()
     matrix.postRotate(degrees.toFloat())
-    matrix.postScale(-1f, 1f)
     return Bitmap.createBitmap(this, 0, 0, this.width, this.height, matrix, true)
+}
+
+fun Image.toBitmap(): Bitmap {
+    val buffer = planes[0].buffer
+    buffer.rewind()
+    val bytes = ByteArray(buffer.capacity())
+    buffer.get(bytes)
+    return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
 }

@@ -8,7 +8,6 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.face.FirebaseVisionFace
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector
 import com.kt.myproject.utils.Logger
-import wee.digital.alfar.utils.camera.bitmapToByteArray
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

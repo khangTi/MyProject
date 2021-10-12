@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.core.graphics.scale
 import com.google.firebase.ml.vision.face.FirebaseVisionFace
 import com.kt.myproject.utils.Logger
-import wee.digital.alfar.utils.camera.toBitmap
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

@@ -12,7 +12,9 @@ import androidx.lifecycle.LifecycleOwner
 import com.kt.myproject.base.AppBindCustomView
 import com.kt.myproject.databinding.CameraViewBinding
 import com.kt.myproject.ex.toast
-import wee.digital.alfar.utils.camera.*
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.callbackFlow
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -85,18 +87,22 @@ class CameraView(context: Context, attrs: AttributeSet) :
         preview = Preview.Builder()
             .setTargetAspectRatio(screenAspectRatio)
             .setTargetRotation(rotation)
+            .setMaxResolution(SIZE)
             .setDefaultResolution(SIZE)
             .build()
 
         imageCapture = ImageCapture.Builder()
             .setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY)
             .setTargetAspectRatio(screenAspectRatio)
+            .setDefaultResolution(SIZE)
+            .setMaxResolution(SIZE)
             .setTargetRotation(rotation)
             .build()
         imageAnalyzer = ImageAnalysis.Builder()
             .setTargetAspectRatio(screenAspectRatio)
             .setTargetRotation(rotation)
             .setDefaultResolution(SIZE)
+            .setMaxResolution(SIZE)
             .build()
             .also {
                 it.setAnalyzer(cameraExecutor, LuminosityAnalyzer { frame, width, height ->
@@ -120,6 +126,36 @@ class CameraView(context: Context, attrs: AttributeSet) :
         }
     }
 
+    /**
+     * capture image
+     */
+    fun captureImage() = callbackFlow {
+        val time = System.currentTimeMillis()
+        val listenerCapture = object : ImageCapture.OnImageCapturedCallback() {
+            override fun onError(exception: ImageCaptureException) {
+                close(exception)
+            }
+
+            @SuppressLint("UnsafeOptInUsageError")
+            override fun onCaptureSuccess(image: ImageProxy) {
+                toast("${System.currentTimeMillis() - time}")
+                val rotation = image.imageInfo.rotationDegrees
+                val bitmap = image.image?.toBitmap().rotate(rotation)
+                if (bitmap == null) {
+                    close(Exception("bitmap null"))
+                } else {
+                    offer(bitmap)
+                }
+                image.close()
+            }
+        }
+        imageCapture?.takePicture(cameraExecutor, listenerCapture)
+        awaitClose { cancel() }
+    }
+
+    /**
+     * lifeCycle camera
+     */
     fun pausePreview() {
         isDetect = false
         cameraProvider?.unbind(preview)

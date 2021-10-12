@@ -4,9 +4,6 @@ import android.graphics.Bitmap
 import android.graphics.Point
 import android.graphics.Rect
 import android.util.Log
-import wee.digital.alfar.utils.camera.HEIGHT
-import wee.digital.alfar.utils.camera.WIDTH
-import wee.digital.alfar.utils.camera.bitmapToByteArray
 import com.google.android.gms.vision.face.Landmark
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
 import com.google.firebase.ml.vision.common.FirebaseVisionPoint

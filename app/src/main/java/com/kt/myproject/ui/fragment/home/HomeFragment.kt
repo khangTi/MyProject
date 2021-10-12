@@ -32,6 +32,7 @@ class HomeFragment : BaseFragment<HomeBinding>(HomeBinding::inflate) {
             UI.RANGE -> navigate(NavigationId.range)
             UI.CAMERA -> navigate(NavigationId.camera)
             UI.GALLERY -> navigate(NavigationId.gallery)
+            UI.SHIMMER -> navigate(NavigationId.shimmer)
             UI.CUSTOM_IMAGE -> navigate(NavigationId.image)
             UI.CALL -> startClear(CallActivity::class.java)
             UI.BOTTOM_SHEET -> navigate(NavigationId.bottom)
