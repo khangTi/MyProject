@@ -9,7 +9,6 @@ import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
-import android.graphics.drawable.StateListDrawable
 import android.os.Build
 import android.util.AttributeSet
 import android.view.Gravity
@@ -61,6 +60,10 @@ class ButtonEx : LinearLayout {
 
     private var text: String? = ""
     private val mGravity = Gravity.CENTER
+
+    private var startColor: Int = 0
+    private var endColor: Int = 0
+    private var angleColor: Int = 0
 
 
     private var drawableResource = 0
@@ -239,13 +242,28 @@ class ButtonEx : LinearLayout {
             attrs.getDimensionPixelSize(R.styleable.NoboButton_nb_iconPadding, iconPadding)
         lGravity = attrs.getInt(R.styleable.NoboButton_nb_gravity, lGravity)
         mIsEnable = attrs.getBoolean(R.styleable.NoboButton_nb_enabled, mIsEnable)
+
+        startColor = attrs.getColor(R.styleable.NoboButton_nb_startColor, 0)
+        endColor = attrs.getColor(R.styleable.NoboButton_nb_endColor, 0)
+        angleColor = attrs.getInt(R.styleable.NoboButton_nb_angleGradient, 0)
     }
 
 
     private fun setupBackground() {
-        val defaultDrawable = GradientDrawable()
+        val defaultDrawable: GradientDrawable
+        if (startColor != 0 && endColor != 0) {
+            val orientation = when (angleColor) {
+                0 -> GradientDrawable.Orientation.TOP_BOTTOM
+                90 -> GradientDrawable.Orientation.BOTTOM_TOP
+                270 -> GradientDrawable.Orientation.TR_BL
+                else -> GradientDrawable.Orientation.BL_TR
+            }
+            defaultDrawable = GradientDrawable(orientation, intArrayOf(startColor, endColor))
+        } else {
+            defaultDrawable = GradientDrawable()
+            defaultDrawable.setColor(backgroundColor)
+        }
         defaultDrawable.cornerRadius = radius
-        defaultDrawable.setColor(backgroundColor)
 
         val focusDrawable = GradientDrawable()
         focusDrawable.cornerRadius = radius
@@ -257,25 +275,7 @@ class ButtonEx : LinearLayout {
         if (borderColor != 0 && borderWidth > 0) {
             defaultDrawable.setStroke(borderWidth, borderColor)
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            background = getRippleDrawable(defaultDrawable, focusDrawable, disabledDrawable)
-        } else {
-            val states = StateListDrawable()
-            val drawable2 = GradientDrawable()
-            drawable2.cornerRadius = radius
-            drawable2.setColor(focusColor)
-            if (focusColor != 0) {
-                states.addState(intArrayOf(android.R.attr.state_pressed), drawable2)
-                states.addState(intArrayOf(android.R.attr.state_focused), drawable2)
-                states.addState(intArrayOf(-android.R.attr.state_enabled), disabledDrawable)
-            }
-            states.addState(intArrayOf(), defaultDrawable)
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-                setBackgroundDrawable(states)
-            } else {
-                this.background = states
-            }
-        }
+        background = getRippleDrawable(defaultDrawable, focusDrawable, disabledDrawable)
     }
 
 

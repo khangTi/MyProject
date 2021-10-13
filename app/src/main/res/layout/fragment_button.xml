@@ -31,7 +31,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:nb_backgroundColor="@color/colorInputFocused"
+            app:nb_startColor="@color/colorTextPrimary"
+            app:nb_endColor="@color/yellow"
             app:nb_radius="10dp"
             app:nb_text="@string/button"
             app:nb_textColor="@color/white" />
