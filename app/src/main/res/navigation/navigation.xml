@@ -142,9 +142,18 @@
         android:id="@+id/rangeFragment"
         android:name="com.kt.myproject.ui.fragment.range.RangeFragment"
         android:label="RangeFragment"
-        tools:layout="@layout/fragment_range"/>
+        tools:layout="@layout/fragment_range" />
     <action
         android:id="@+id/action_global_rangeFragment"
         app:destination="@id/rangeFragment" />
+
+    <dialog
+        android:id="@+id/buttonFragment"
+        android:name="com.kt.myproject.ui.fragment.button.ButtonFragment"
+        android:label="fragment_button"
+        tools:layout="@layout/fragment_button" />
+    <action
+        android:id="@+id/action_global_buttonFragment"
+        app:destination="@id/buttonFragment" />
 
 </navigation>

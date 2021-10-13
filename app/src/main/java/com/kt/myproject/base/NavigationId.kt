@@ -45,6 +45,8 @@ object NavigationId {
 
     val range = NavigationDirections.actionGlobalRangeFragment()
 
+    val button = NavigationDirections.actionGlobalButtonFragment()
+
     /**
      * Call Directions
      */

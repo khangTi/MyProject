@@ -19,4 +19,6 @@
     <string name="connect_hint_id">Id Number</string>
     <string name="connect_action">Connect</string>
 
+    <string name="button">Button</string>
+
 </resources>
