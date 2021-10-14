@@ -8,7 +8,8 @@ import com.kt.myproject.ex.post
 import com.kt.myproject.ex.toast
 import com.kt.myproject.repository.store.PreferencesStore
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class PreferencesFragment : BaseFragment<PreferencesBinding>(PreferencesBinding::inflate) {
@@ -44,11 +45,9 @@ class PreferencesFragment : BaseFragment<PreferencesBinding>(PreferencesBinding:
     }
 
     private fun getValueStore() {
-        lifecycleScope.launch(Dispatchers.IO) {
-            PreferencesStore.value.collect {
-                launch(Dispatchers.Main) { binding.preferencesLabel.text = it }
-            }
-        }
+        PreferencesStore.value.onEach {
+            post { binding.preferencesLabel.text = it }
+        }.launchIn(lifecycleScope)
     }
 
 }
