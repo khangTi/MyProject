@@ -2,6 +2,11 @@ package com.kt.myproject.repository.api
 
 import com.google.gson.Gson
 import com.google.gson.JsonArray
+import com.google.gson.JsonObject
+import com.google.gson.reflect.TypeToken
+import com.kt.myproject.ex.int
+import com.kt.myproject.ex.str
+import com.kt.myproject.ex.toJsonObject
 import com.kt.myproject.repository.model.ApiResponse
 import okhttp3.ResponseBody
 import retrofit2.HttpException
@@ -17,9 +22,12 @@ import java.net.UnknownHostException
  * All Right Reserved
  * -------------------------------------------------------------------------------------------------
  */
-fun Response<ResponseBody>.handlerResp(): ApiResponse<JsonArray> {
-    val resp = this@handlerResp
-    val result = ApiResponse<JsonArray>()
+inline fun <reified T> Gson.fromJson(json: String?): T =
+    fromJson<T>(json, object : TypeToken<T>() {}.type)
+
+inline fun <reified T> Response<ResponseBody>.handleResp(): ApiResponse<T> {
+    val resp = this@handleResp
+    val result = ApiResponse<T>()
     if (resp.code() != 200) {
         result.apply {
             code = resp.code()
@@ -28,12 +36,10 @@ fun Response<ResponseBody>.handlerResp(): ApiResponse<JsonArray> {
         return result
     }
     try {
-        val json = resp.body()?.string() ?: ""
-        val body = Gson().fromJson(json, JsonArray::class.java)
+        val json = resp.body()?.string()
+        val resp = Gson().fromJson<T>(json)
         result.apply {
-            code = resp.code()
-            message = resp.message()
-            data = body
+            data = resp
         }
         return result
     } catch (e: Exception) {
@@ -45,19 +51,19 @@ fun Response<ResponseBody>.handlerResp(): ApiResponse<JsonArray> {
     }
 }
 
-fun <T> java.lang.Exception.handlerApi(): ApiResponse<T> {
+inline fun <T> java.lang.Exception.handlerApi(): ApiResponse<T> {
     return when (this) {
         is HttpException, is UnknownHostException, is SocketTimeoutException -> {
             val api = ApiResponse<T>().apply {
                 code = -1
-                message = this.message
+                message = this@handlerApi.message.toString()
             }
             api
         }
         else -> {
             val api = ApiResponse<T>().apply {
                 code = -100
-                message = this.message
+                message = this@handlerApi.message.toString()
             }
             api
         }

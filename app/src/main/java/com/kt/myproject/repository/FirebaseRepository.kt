@@ -12,14 +12,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 
-/**
- * -------------------------------------------------------------------------------------------------
- * @Project: no name
- * @Created: KOP 2021/08/27
- * @Description: ...
- * All Right Reserved
- * -------------------------------------------------------------------------------------------------
- */
 object FirebaseRepository {
 
     private val database = FirebaseDatabase.getInstance()

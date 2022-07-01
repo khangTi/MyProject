@@ -6,15 +6,16 @@ import com.kt.myproject.R
 import com.kt.myproject.base.BaseFragment
 import com.kt.myproject.camera.DataGetFacePoint
 import com.kt.myproject.camera.DetectFace
+import com.kt.myproject.camera.toBitmap
 import com.kt.myproject.databinding.FragmentCameraBinding
 import com.kt.myproject.ex.color
+import com.kt.myproject.ex.post
 import com.kt.myproject.ex.toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import com.kt.myproject.camera.toBitmap
 
 class CameraFragment : BaseFragment<FragmentCameraBinding>(FragmentCameraBinding::inflate),
     DetectFace.DetectCallBack {
@@ -27,8 +28,7 @@ class CameraFragment : BaseFragment<FragmentCameraBinding>(FragmentCameraBinding
 
         binding.cameraCapture.setOnClickListener {
             binding.cameraPreview.captureImage().onEach {
-                print("")
-//                toast("${it?.width} - ${it?.height}")
+                post { binding.cameraFrameResult.setImageBitmap(it) }
             }.launchIn(lifecycleScope)
         }
     }
